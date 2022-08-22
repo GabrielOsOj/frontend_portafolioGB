@@ -1,0 +1,11 @@
+$colorN1: #1B262C;
+$colorN2: #0F4C75;
+$colorN3: #3282B8;
+$colorN4: #BBE1FA;
+
+$primary: $colorN1 ;
+$secondary: $colorN2 ;
+$success: $colorN3 ;
+$info: $colorN4 ;
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

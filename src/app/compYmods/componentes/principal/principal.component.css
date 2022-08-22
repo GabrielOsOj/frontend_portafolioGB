@@ -1,0 +1,22 @@
+.pag1 {
+    height: 40rem;
+    width: 100%;
+  
+    background-image:url("../../../../assets/argProgBanner.jpg");
+ 
+    background-size: cover;
+}
+.test{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+}
+
+.p{
+    text-align: center;
+    width: 85%;
+}
+
+.d{
+    width: 55%;
+}
