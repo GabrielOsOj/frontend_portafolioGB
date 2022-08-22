@@ -1,0 +1,9 @@
+.bg-photo{
+    background-image: url("../../../../assets/bg-01.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inp:focus{
+   outline: 1px solid var(--colorN3);
+}  

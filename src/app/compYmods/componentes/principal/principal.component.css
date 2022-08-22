@@ -1,22 +1,38 @@
 .pag1 {
     height: 40rem;
     width: 100%;
-  
-    background-image:url("../../../../assets/argProgBanner.jpg");
- 
-    background-size: cover;
+
+    background-image: url("../../../../assets/argProgBanner.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
 }
-.test{
+
+@media (max-width: 767px) {
+    
+    .pag1{
+        height: 80rem;
+    
+    }
+
+    .container{
+        flex-direction: column;
+        height: 50rem;
+    }
+
+  }
+
+
+.test {
     width: 100%;
     height: 100%;
     backdrop-filter: blur(5px);
 }
 
-.p{
+.p {
     text-align: center;
     width: 85%;
 }
 
-.d{
+.d {
     width: 55%;
 }

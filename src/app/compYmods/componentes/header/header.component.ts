@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   tempo(e:any): void {
-    console.log(window.pageYOffset);
     let posUser:number=window.pageYOffset;
     if(posUser>0){
       this.pos=false;
