@@ -1,0 +1,55 @@
+.box{
+    width: 100%;
+    height: 284px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.imgContainer{
+    width: 250px;
+    height: 180px;
+    margin: 0 20px 0 20px;
+
+}
+
+.imgC{
+    width: 100%;
+    height: 100%;
+}
+
+.TyPcontainer{
+    width: 65%;
+    height: 180px;
+}
+
+@media (max-width: 991px) {
+    .box{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .TyPcontainer{
+        width: 75%;
+        height: auto;
+    }
+
+    .info,.titulo{
+        width: 100%;  
+    }
+
+    .imgContainer{
+        width: 250px;
+        height: 180px;
+        margin: 20px 0 20px 0;
+    
+    }
+}
+
+
+.derechoF{
+    flex-direction: row-reverse;
+}
+

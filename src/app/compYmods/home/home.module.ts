@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './pagina/home.component';
 import { HeaderComponent } from '../componentes/header/header.component';
+import { PlantTarjetaComponent } from '../compCompartidos/plant-tarjeta/plant-tarjeta.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HeaderComponent } from '../componentes/header/header.component';
     ProyectosComponent,
     SkillsComponent,
     HeaderComponent,
+    PlantTarjetaComponent
   ],
   imports: [CommonModule, HomeRoutingModule],
 })

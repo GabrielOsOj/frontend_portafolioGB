@@ -1,5 +1,8 @@
 .stand{    
-    height: auto;
-    width: 95%;
-    margin: 113px auto 0 auto;
+    height:auto;
+    width: 80%;
+    margin: 5px auto 0 auto;
+}
+.exp{
+    width: 72%;
 }

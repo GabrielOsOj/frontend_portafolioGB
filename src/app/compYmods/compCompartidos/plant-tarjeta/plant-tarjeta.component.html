@@ -1,0 +1,19 @@
+<section [ngClass]="{'box d-flex bg-secondary align-items-center justify-content-evenly':true, 'flex-row-reverse':derecho}">
+    <div class="imgContainer">
+        <img src={{exp.imagen}} class="imgC" alt="">
+    </div>
+
+    <div class="TyPcontainer d-flex flex-column align-items-evenly">
+
+        <!-- maximo 120 caracteres, ponele ese limite de alguna forma -->
+        <p class="titulo text-white">{{exp.titulo}}
+        </p>
+
+
+        <!-- maximo 700 caracteres, fijate de ponerle ese limite, sino queda feo -->
+        <p class="info text-white ">{{exp.descripcion}}</p>
+
+
+    </div>
+
+</section>
