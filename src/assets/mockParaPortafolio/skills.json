@@ -1,0 +1,26 @@
+[
+    {
+        "habilidad": "javascript",
+        "nivel": "80"
+    },
+    {
+        "habilidad": "angular",
+        "nivel": "80"
+    },
+    {
+        "habilidad": "mySql",
+        "nivel": "80"
+    },
+    {
+        "habilidad": "java",
+        "nivel": "80"
+    },
+    {
+        "habilidad": "springboots",
+        "nivel": "80"
+    },
+    {
+        "habilidad": "html,css",
+        "nivel": "80"
+    }
+]

@@ -9,3 +9,17 @@ body {
     --colorN3: #3282B8;
     --colorN4: #BBE1FA;
 }
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos globales */
+
+/* linea de division de cada caja */
+.division{
+    height: .5px;
+    width: 90%;
+    margin: auto;
+    background-color: var(--colorN4);
+}
