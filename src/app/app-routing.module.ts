@@ -3,12 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path:"",
+    path:"home",
     loadChildren:()=>import('./compYmods/home/home.module').then(m=>m.HomeModule)
   },
   {
     path:"login",
     loadChildren:()=>import('./compYmods/login/login.module').then(m=>m.LoginModule)
+  },
+  {
+    path:"**",
+    redirectTo:"/home"
   }
 ];
 

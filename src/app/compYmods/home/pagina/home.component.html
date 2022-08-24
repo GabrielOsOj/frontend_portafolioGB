@@ -1,20 +1,21 @@
-<app-header></app-header>
-<app-principal></app-principal>
+<app-header (newItemEvent)="get($event)"></app-header>
+<app-principal id="#inicio"></app-principal>
+
 <div class="division mt-3 exp"></div>
 <div class="stand">
-    <app-experiencia id="pag2">a</app-experiencia>
-    <div class="division mt-3"></div>
+    <app-experiencia id="#experiencia"></app-experiencia>
 
-    <app-estudios id="pag3">b</app-estudios>
-    <div class="division mt-3"></div>
+    <div class="division mt-3" id="#estudios"></div>
+    <app-estudios></app-estudios>
 
-    <app-skills id="pag4">c</app-skills>
-    <div class="division mt-3"></div>
+    <div class="division mt-3" id="#habilidades"></div>
+    <app-skills></app-skills>
 
-    <app-proyectos id="pag5">d</app-proyectos>
-    <div class="division mt-3"></div>
+    <div class="division mt-3" id="#proyectos"></div>
+    <app-proyectos></app-proyectos>
 
-    <app-contacto id="pag6">e</app-contacto>
+    <div class="division mt-3" id="#contacto"></div>
+    <app-contacto></app-contacto>
     <app-footer id="pag7"></app-footer>
 
 </div>

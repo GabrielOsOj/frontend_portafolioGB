@@ -1,0 +1,17 @@
+.skillBox{
+    width: 100%;
+    height: auto;
+}
+
+
+.titulo{
+    width: 100%;
+    text-align: center;
+}
+
+.skillContainer{
+    margin: auto;
+    width: 95%;
+    min-height: 250px;
+    
+}

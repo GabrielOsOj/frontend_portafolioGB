@@ -1,5 +1,7 @@
-[{	
-	"titulo":"experiencia de maqueta",
-	"urlFoto":"",
-	"descripcion":"experiencia experiencia experiencia sdandkpaskdj sa asd sda asd asd asd sad sad asd as d"	
-}]
+[
+	{
+		"titulo": "experiencia de maqueta",
+		"url": "http://localhost/mockParaPortafolio/fotosMock/mineroMok.jpg",
+		"descripcion": "experiencia experiencia experiencia sdandkpaskdj sa asd sda asd asd asd sad sad asd as d"
+	}
+]

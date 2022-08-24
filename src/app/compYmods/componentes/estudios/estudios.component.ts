@@ -1,3 +1,5 @@
+import { expYest } from 'src/app/Interfaces/exp-interface';
+import { EstudiosService } from './../../servicios/estudiosSv/estudios.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EstudiosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private resEst:EstudiosService) { }
+
+  estudios:Array<expYest>=new Array;
 
   ngOnInit(): void {
+    
+    this.impEstudios()
+
   }
+
+  impEstudios(){
+    this.resEst.$resEstudios.subscribe({
+      next: r=>{
+        this.estudios=r
+      }
+    })
+  }
+  
+
+
 
 }

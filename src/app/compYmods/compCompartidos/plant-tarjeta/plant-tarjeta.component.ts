@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PlantTarjetaComponent implements OnInit {
 
-  @Input() exp:expYest ={imagen:"",titulo:"",descripcion:""};
+  @Input() exp:expYest ={url:"",titulo:"",descripcion:""};
   @Input() derecho:boolean = false;
 
 

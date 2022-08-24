@@ -1,5 +1,5 @@
 export interface expYest {
-  imagen: string;
+  url: string;
   titulo: string;
   descripcion: string;
 }

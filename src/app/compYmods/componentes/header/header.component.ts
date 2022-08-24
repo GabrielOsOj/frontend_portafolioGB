@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +9,8 @@ export class HeaderComponent implements OnInit {
   estado:boolean=true;
   pos:boolean=true;
 
+  @Output() newItemEvent = new EventEmitter<string>();
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -31,5 +33,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  goTo(nombre:string){
+    this.newItemEvent.emit(nombre);
+  }
 
 }

@@ -6,17 +6,17 @@
         </div>
         <nav id="navbar" *ngIf="estado" class="navbar order-last order-lg-0 ">
             <ul>
-                <li><a class="nav-link scrollto text-white" href="#pag1">Inicio</a></li>
-                <li><a class="nav-link scrollto text-white" href="#portfolio">Proyectos</a></li>
-                <li><a class="nav-link scrollto text-white" href="#portfolio">Estudios</a></li>
-                <li><a class="nav-link scrollto text-white" href="#pricing">Experiencia</a></li>
-                <li><a class="nav-link scrollto text-white" href="#contact">Contacto</a></li>
+                <li><a class="nav-link scrollto text-white" (click)="goTo('#inicio')">Inicio</a></li>
+                <li><a class="nav-link scrollto text-white" (click)="goTo('#proyectos')">Proyectos</a></li>
+                <li><a class="nav-link scrollto text-white" (click)="goTo('#estudios')">Estudios</a></li>
+                <li><a class="nav-link scrollto text-white" (click)="goTo('#experiencia')">Experiencia</a></li>
+                <li><a class="nav-link scrollto text-white" (click)="goTo('#contacto')">Contacto</a></li>
             </ul> <i class="bi bi-list mobile-nav-toggle" (click)="switch()"></i>
         </nav>
 
         <nav id="navbar" *ngIf="!estado" class="navbar order-last order-lg-0 navbar-mobile">
             <ul>
-                <li><a class="nav-link scrollto" href="#hero" (click)="switch()">Inicio</a></li>
+                <li><a class="nav-link scrollto" href="#hero" (click)="switch();goTo('')">Inicio</a></li>
                 <li><a class="nav-link scrollto" href="#portfolio" (click)="switch()">Proyectos</a></li>
                 <li><a class="nav-link scrollto" href="#pricing" (click)="switch()">Estudios</a></li>
                 <li><a class="nav-link scrollto" href="#contact" (click)="switch()">Experiencia</a></li>

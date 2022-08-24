@@ -1,3 +1,10 @@
 .p{
     width: 100%;
+    text-align: end;
+}
+
+@media (max-width: 767px){
+    .p{
+        text-align: center;
+    }
 }
