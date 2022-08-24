@@ -1,21 +1,21 @@
 [{	
 	"titulo":"colegio incorporado san andres",
-	"urlFoto":"",
+	"url":"http://localhost/mockParaPortafolio/fotosMock/descarga.jfif",
 	"descripcion":"secundiaro cursado y completo"	
 },
 {	
-	"titulo":"unsam",
-	"urlFoto":"",
+	"titulo":"Unsam",
+	"url":"http://localhost/mockParaPortafolio/fotosMock/uns.png",
 	"descripcion":"cursando actualmente la tecnicatura en programacion informatica"
 	
 },
 {	
 	"titulo":"argentina programa",
-	"urlFoto":"",
+	"url":"http://localhost/mockParaPortafolio/fotosMock/argentiaProgramaLogo.png",
 	"descripcion":"cursando actualmente"
 },
 {	
 	"titulo":"udemi",
-	"urlFoto":"",
+	"url":"http://localhost/mockParaPortafolio/fotosMock/Udemy_logo.svg.png",
 	"descripcion":"cursos de manera autodidacta"
 }]

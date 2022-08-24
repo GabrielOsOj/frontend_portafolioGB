@@ -1,3 +1,4 @@
+import { PlantSkillComponent } from './../compCompartidos/plant-skill/plant-skill.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PlantTarjetaComponent } from '../compCompartidos/plant-tarjeta/plant-tarjeta.component';
@@ -5,12 +6,12 @@ import { HomeComponent } from './pagina/home.component';
 
 const routes: Routes = [
   {
-    path: 'H',
+    path: '',
     component: HomeComponent,
   },
   {
     path:"test",
-    component:  PlantTarjetaComponent
+    component: PlantSkillComponent
   }
 ];
 

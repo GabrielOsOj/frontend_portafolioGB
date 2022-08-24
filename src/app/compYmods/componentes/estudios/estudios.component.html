@@ -1,1 +1,12 @@
-<p>estudios works!</p>
+<section class="mt-2 container-fluid d-flex align-items-center justify-content-center flex-column">
+
+    <p class="p text-info fs-4">Estudios</p>
+    <div class="cardContainer" *ngIf="estudios.length>0">
+        <app-plant-tarjeta class="flex-row-reverse" [exp]="estudio"
+        *ngFor="let estudio of estudios" [derecho]="true"
+        ></app-plant-tarjeta>
+
+    </div> 
+
+
+</section>

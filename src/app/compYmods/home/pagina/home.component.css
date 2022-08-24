@@ -2,7 +2,10 @@
     height:auto;
     width: 80%;
     margin: 5px auto 0 auto;
+
+    scroll-behavior: smooth;
 }
 .exp{
     width: 72%;
 }
+

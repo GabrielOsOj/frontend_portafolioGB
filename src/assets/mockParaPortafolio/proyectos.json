@@ -1,7 +1,7 @@
 [
 	{
 		"titulo": "clon de spotify",
-		"urlFoto": "",
+		"url": "",
 		"descripcion": "clon funcional de spotify, desarrollado con angular, tipescript, html y css",
 		"tecnologias": [
 			"angular",
@@ -12,7 +12,7 @@
 	},
 	{
 		"titulo": "Portafolio",
-		"urlFoto": "",
+		"url": "",
 		"descripcion": "este portafolio se creo con angular, bootstrap, html y css para el frontend, ademas cuenta con un login y un modo edicion que utiliza java y springboots conectados a una base de datos sql",
 		"tecnologias": [
 			"angular",

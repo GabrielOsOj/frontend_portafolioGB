@@ -12,6 +12,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './pagina/home.component';
 import { HeaderComponent } from '../componentes/header/header.component';
 import { PlantTarjetaComponent } from '../compCompartidos/plant-tarjeta/plant-tarjeta.component';
+import { PlantSkillComponent } from '../compCompartidos/plant-skill/plant-skill.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PlantTarjetaComponent } from '../compCompartidos/plant-tarjeta/plant-ta
     ProyectosComponent,
     SkillsComponent,
     HeaderComponent,
-    PlantTarjetaComponent
+    PlantTarjetaComponent,
+    PlantSkillComponent,
   ],
   imports: [CommonModule, HomeRoutingModule],
 })
