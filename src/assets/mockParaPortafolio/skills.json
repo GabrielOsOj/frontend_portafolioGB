@@ -1,26 +1,26 @@
 [
     {
-        "habilidad": "javascript",
-        "nivel": "80"
+        "titulo": "javascript",
+        "nivel": "70"
     },
     {
-        "habilidad": "angular",
-        "nivel": "80"
+        "titulo": "angular",
+        "nivel": "70"
     },
     {
-        "habilidad": "mySql",
-        "nivel": "80"
+        "titulo": "mySql",
+        "nivel": "70"
     },
     {
-        "habilidad": "java",
-        "nivel": "80"
+        "titulo": "java",
+        "nivel": "40"
     },
     {
-        "habilidad": "springboots",
-        "nivel": "80"
+        "titulo": "springboots",
+        "nivel": "40"
     },
     {
-        "habilidad": "html,css",
+        "titulo": "html,css",
         "nivel": "80"
     }
 ]

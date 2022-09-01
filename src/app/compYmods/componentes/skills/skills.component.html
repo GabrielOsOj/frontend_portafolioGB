@@ -2,7 +2,16 @@
 
     <p class="titulo text-info">Habilidades</p>
 
-    <div class="skillContainer bg-info"></div>
+    <div class="skillContainer d-flex flex-wrap justify-content-evenly
+    aling-items-between">
+
+        <section class="cosa" *ngFor="let skill of resSkillArr">
+            <app-plant-skill [skill]="skill.titulo" [rango]="skill.nivel"></app-plant-skill>
+        </section>
+
+
+        <!-- fijate que cuando se hace responsive, el mx hace algo raro.. -->
+    </div>
 
 
 

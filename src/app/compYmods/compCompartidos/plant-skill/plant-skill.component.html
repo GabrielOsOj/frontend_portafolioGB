@@ -1,16 +1,64 @@
 <div class="intRadio">
 
     <div class="circulo">
-        <div class="rBox r1 on"></div>
-        <div class="rBox r1 on"></div>
-        <div class="rBox r1 on"></div>
-        <div class="rBox r1 on"></div>
-        <div class="rBox r1 on"></div>
-        <div class="rBox r1 on"></div>
-        <div class="rBox r1 on"></div>
-        <div class="rBox r1 on"></div>
-        <div class="rBox r1 on"></div>
+        <div class="circulo-interior">
+            <div class="circulo-interior">
+                <div class="nomb">{{skill}}</div>
+                <div class="bigDiv1">
+                    <div [ngClass]="{'val der':true,'t':ToF[5]}" id="s60"></div>
+                    <div [ngClass]="{'val izq':true,'t':ToF[0]}" id="d10"></div>
+                </div>
+                <div class="bigDiv5">
+                    <div [ngClass]="{'val der':true,'t':ToF[7]}" id="o80"></div>
+                    <div [ngClass]="{'val izq':true,'t':ToF[2]}" id="t30"></div>
+                </div>
+                <div class="bigDiv2">
+                    <div [ngClass]="{'val der':true,'t':ToF[9]}" id="c100"></div>
+                    <div [ngClass]="{'val izq':true,'t':ToF[4]}" id="c50"></div>
+                </div>
+                <div class="bigDiv4">
+                    <div [ngClass]="{'val der':true,'t':ToF[8]}" id="n90"></div>
+                    <div [ngClass]="{'val izq':true,'t':ToF[3]}" id="c40"></div>
+                </div>
+                <div class="bigDiv3">
+                    <div [ngClass]="{'val der':true,'t':ToF[6]}" id="s70"></div>
+                    <div [ngClass]="{'val izq':true,'t':ToF[1]}" id="v20"></div>
+                </div>
 
+            </div>
+        </div>
     </div>
-
 </div>
+
+
+<!-- el de abajo es funcional -->
+<!-- <div class="intRadio">
+
+    <div class="circulo">
+        <div class="circulo-interior">
+            <div class="bigDiv1">
+                <div class="val der" id="60"></div>
+                <div class="val izq" id="10"></div>
+            </div>
+            <div class="bigDiv5">
+                <div class="val der" id="100"></div>
+                <div class="val izq" id="50"></div>
+            </div>
+            <div class="bigDiv2">
+                <div class="val der" id="70"></div>
+                <div class="val izq" id="20"></div>
+            </div>
+            <div class="bigDiv4">
+                <div class="val der" id="90"></div>
+                <div class="val izq" id="40"></div>
+            </div>
+            <div class="bigDiv3">
+                <div class="val der" id="80"></div>
+                <div class="val izq" id="30"></div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div> -->

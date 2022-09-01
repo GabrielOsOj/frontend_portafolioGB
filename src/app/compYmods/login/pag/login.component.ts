@@ -17,4 +17,8 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/','H'])
   }
 
+
+  //cuando hagas esto, volve a chusmear el tema de los suscribe, 
+  //para ver si te desuscribis del sv que te trae el token del back;
+  
 }
