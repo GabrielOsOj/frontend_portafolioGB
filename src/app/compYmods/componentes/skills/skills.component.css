@@ -11,7 +11,19 @@
 
 .skillContainer{
     margin: auto;
-    width: 95%;
+    width: 100%;
     min-height: 250px;
     
+}
+
+@media (max-width: 991px) {
+    .skillContainer{
+        justify-content: space-evenly;
+    }
+}
+
+@media (max-width:376) {
+    .cosa{
+        margin: auto;
+    }
 }

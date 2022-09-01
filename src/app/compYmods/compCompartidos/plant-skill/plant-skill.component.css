@@ -1,31 +1,130 @@
 .intRadio {
     width: 250px;
     height: 250px;
-    background-color: var(--colorN3);
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-   
 
-    /* tempo lo de abajo de esta linea */
-    margin: auto;
 }
 
-.circulo{
+.circulo {
     height: 245px;
     width: 245px;
-    background-color: #000;
 
     border-radius: 100%;
+
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
 }
 
-.on{
+.circulo-interior {
+    height: 170px;
+    width: 170px;
+    background-color: var(--colorN1);
+
+    border-radius: 100%;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bigDiv,
+.bigDiv1,
+.bigDiv2,
+.bigDiv3,
+.bigDiv4,
+.bigDiv5 {
+    width: 245px;
+    height: 75px;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: absolute;
+    z-index: -1;
+
+}
+
+.val {
+    height: 100%;
+    width: 50px;
+
+    background-color: var(--colorN2);
+}
+
+.t {
     background-color: var(--colorN4);
 }
 
-.rBox{
-    width:10px;
-    height: 10px;
+.izq {
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
 }
+
+.der {
+    clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+}
+
+
+.bigDiv1 {
+    transform: rotate(108deg);
+}
+
+.bigDiv2 {
+    transform: rotate(252deg);
+}
+
+.bigDiv3 {
+    transform: rotate(144deg);
+}
+
+.bigDiv4 {
+    transform: rotate(216deg);
+}
+
+.bigDiv5 {
+    transform: rotate(180deg);
+}
+
+
+.nomb{
+    width: 171px;
+    height: 171px;
+    border-radius: 100%;
+
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--colorN3);
+    overflow: hidden;
+
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
