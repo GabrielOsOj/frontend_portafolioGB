@@ -1,7 +1,7 @@
-import { PlantSkillComponent } from './../compCompartidos/plant-skill/plant-skill.component';
+import { InfoComponent } from './../compCompartidos/plant-modales/info-modal/info.component';
+import { ProyectoTmpComponent } from './../compCompartidos/plant-proyecto/proyecto-tmp.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PlantTarjetaComponent } from '../compCompartidos/plant-tarjeta/plant-tarjeta.component';
 import { HomeComponent } from './pagina/home.component';
 
 const routes: Routes = [
@@ -11,8 +11,13 @@ const routes: Routes = [
   },
   {
     path:"test",
-    component: PlantSkillComponent
+    component: ProyectoTmpComponent
+  },
+  {
+    path:"modalTest",
+    component: InfoComponent
   }
+
 ];
 
 @NgModule({

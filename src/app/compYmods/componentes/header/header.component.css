@@ -1,10 +1,11 @@
 a {
-  color: #009cea;
+  color: var(--colorN2);
+  cursor: pointer;
   text-decoration: none;
 }
 
 a:hover {
-  color: #1eb4ff;
+  color: #000;
   text-decoration: none;
 }
 
@@ -27,7 +28,7 @@ h6 {
 #header {
   height: 113px;
   transition: all 0.5s;
-  z-index: 997;
+  z-index: 800;
   transition: all 0.5s;
 }
 
@@ -37,7 +38,7 @@ h6 {
   line-height: 0;
   font-weight: 600;
   letter-spacing: 1px;
-  font-family: "Open Sans", sans-serif;
+ 
 }
 
 .header-social-links {
@@ -51,15 +52,13 @@ h6 {
 }
 
 .header-social-links a {
-  color: #7b909a;
+  color: var(--colorN4);
   display: inline-block;
   line-height: 0px;
   transition: 0.3s;
   padding-left: 10px;
-}
 
-.header-social-links a:hover {
-  color: #009cea;
+
 }
 
 .img {
@@ -91,7 +90,7 @@ h6 {
   padding: 10px 0 10px 30px;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
-  color: #7b909a;
+  color: var(--colorN4);
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -107,7 +106,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #009cea;
+  color: var(--colorN3);
 }
 
 .navbar .dropdown ul {

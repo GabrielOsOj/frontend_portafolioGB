@@ -1,1 +1,8 @@
-<p>proyectos works!</p>
+<section class="ProyectosPg d-flex mt-3 flex-column">
+    <p class="Proyectos-pag__titulo text-info">Proyectos</p>
+
+    <div class="Proyectos-pag__container d-flex justify-content-evenly flex-wrap">
+        <app-proyecto-tmp *ngFor="let proyecto of resProyectos" [info]="proyecto" class="mt-4"></app-proyecto-tmp>
+    </div>
+
+</section>

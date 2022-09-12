@@ -1,3 +1,5 @@
+import { ProyectoTmpComponent } from './../compCompartidos/plant-proyecto/proyecto-tmp.component';
+import { InfoComponent } from './../compCompartidos/plant-modales/info-modal/info.component';
 import { SkillsComponent } from './../componentes/skills/skills.component';
 import { ProyectosComponent } from './../componentes/proyectos/proyectos.component';
 import { PrincipalComponent } from './../componentes/principal/principal.component';
@@ -27,6 +29,8 @@ import { PlantSkillComponent } from '../compCompartidos/plant-skill/plant-skill.
     HeaderComponent,
     PlantTarjetaComponent,
     PlantSkillComponent,
+    ProyectoTmpComponent,
+    InfoComponent,
   ],
   imports: [CommonModule, HomeRoutingModule],
 })
