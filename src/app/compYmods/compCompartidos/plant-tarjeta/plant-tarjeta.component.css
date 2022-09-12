@@ -3,6 +3,8 @@
     height: 284px;
     border-radius: 5px;
     margin: 10px;
+
+    transition: all .5s;
 }
 
 .imgContainer {
@@ -66,3 +68,6 @@
     }
 }
 
+.box:hover{
+    transform: scale(1.05);
+}

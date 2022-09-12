@@ -1,0 +1,14 @@
+<section class="contenedor" (click)="open_closed()" (mouseover)="mouseIn()" (mouseleave)="mouseOut()">
+    <div class="after" #after></div>
+
+    <img [src]="info.url[0]" class="img" alt="">
+
+    <div class="plegable d-flex flex-column justify-content-center" #textC>
+
+        <h5 class="text-center text-info">{{info.titulo}}</h5>
+
+    </div>
+
+</section>
+
+<app-info *ngIf="open" (isOpen)="closeFromMod($event)" class="index" [Minfo]="info"></app-info>

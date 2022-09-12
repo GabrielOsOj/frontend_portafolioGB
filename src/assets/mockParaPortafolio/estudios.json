@@ -1,5 +1,5 @@
 [{	
-	"titulo":"colegio incorporado san andres",
+	"titulo":"Colegio Incorporado San Andres",
 	"url":"http://localhost/mockParaPortafolio/fotosMock/descarga.jfif",
 	"descripcion":"secundiaro cursado y completo"	
 },
@@ -10,12 +10,12 @@
 	
 },
 {	
-	"titulo":"argentina programa",
+	"titulo":"Argentina Programa",
 	"url":"http://localhost/mockParaPortafolio/fotosMock/argentiaProgramaLogo.png",
 	"descripcion":"cursando actualmente"
 },
 {	
-	"titulo":"udemi",
+	"titulo":"udemy",
 	"url":"http://localhost/mockParaPortafolio/fotosMock/Udemy_logo.svg.png",
 	"descripcion":"cursos de manera autodidacta"
 }]

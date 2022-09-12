@@ -1,3 +1,6 @@
+import { infMod } from './../../../Interfaces/infModal-interface';
+import { Observable, Subscription } from 'rxjs';
+import { ProyectosService } from './../../servicios/proyectosSv/proyectos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProyectosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private r:ProyectosService) { }
+
+  resProyectos:Array<infMod>=[];
 
   ngOnInit(): void {
+    this.sus()
   }
 
+  //haber quede que tengo que hacer llegar la respuesta del json al componente
+  //y al modal, hice una interfaz, hace llegar el json, toy quemadisimo
+
+  sus(){
+    this.r.$resProyectos.subscribe({
+      next:(r)=>{
+        this.resProyectos=r;
+      }
+    })
+  }
 }
