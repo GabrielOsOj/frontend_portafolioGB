@@ -57,6 +57,5 @@ export class ProyectoTmpComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    console.log(this.info)
   }
 }

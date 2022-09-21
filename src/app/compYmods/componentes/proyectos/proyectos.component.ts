@@ -1,5 +1,4 @@
 import { infMod } from './../../../Interfaces/infModal-interface';
-import { Observable, Subscription } from 'rxjs';
 import { ProyectosService } from './../../servicios/proyectosSv/proyectos.service';
 import { Component, OnInit } from '@angular/core';
 

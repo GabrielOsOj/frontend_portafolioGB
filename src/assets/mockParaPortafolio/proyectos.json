@@ -8,10 +8,22 @@
 		],
 		"descripcion": "clon funcional de spotify, desarrollado con angular, tipescript, html y css",
 		"tecnologias": [
-			["angular","f00"],
-			["tipescript","0ff"],
-			["bootstrap","a20"],
-			["html","e10"]
+			[
+				"angular",
+				"f00"
+			],
+			[
+				"tipescript",
+				"0ff"
+			],
+			[
+				"bootstrap",
+				"a20"
+			],
+			[
+				"html",
+				"e10"
+			]
 		]
 	},
 	{
@@ -23,13 +35,22 @@
 		],
 		"descripcion": "este portafolio se creo con angular, bootstrap, html y css para el frontend, ademas cuenta con un login y un modo edicion que utiliza java y springboots conectados a una base de datos sql",
 		"tecnologias": [
-			"angular",
-			"tipescript",
-			"bootstrap",
-			"html",
-			"java"
+			[
+				"angular",
+				"f00"
+			],
+			[
+				"tipescript",
+				"0ff"
+			],
+			[
+				"bootstrap",
+				"a20"
+			],
+			[
+				"html",
+				"e10"
+			]
 		]
-	
 	}
-	
 ]
