@@ -6,11 +6,12 @@
         </div>
         <nav id="navbar" *ngIf="estado" class="navbar order-last order-lg-0 ">
             <ul>
-                <li><a class="nav-link scrollto" (click)="goTo('#inicio')">Inicio</a></li>
-                <li><a class="nav-link scrollto" (click)="goTo('#proyectos')">Proyectos</a></li>
-                <li><a class="nav-link scrollto" (click)="goTo('#estudios')">Estudios</a></li>
-                <li><a class="nav-link scrollto" (click)="goTo('#experiencia')">Experiencia</a></li>
-                <li><a class="nav-link scrollto" (click)="goTo('#contacto')">Contacto</a></li>
+                <li><a class="nav-link" (click)="goTo('#inicio')">Inicio</a></li>
+                <li><a class="nav-link" (click)="goTo('#proyectos')">Proyectos</a></li>
+                <li><a class="nav-link" (click)="goTo('#estudios')">Estudios</a></li>
+                <li><a class="nav-link" (click)="goTo('#experiencia')">Experiencia</a></li>                
+                <li><a class="nav-link" (click)="goTo('#contacto')">Contacto</a></li>
+                    
             </ul> <i class="bi bi-list mobile-nav-toggle" (click)="switch()"></i>
         </nav>
 
@@ -25,10 +26,11 @@
             </ul> <i class="bi bi-list mobile-nav-toggle bi-x" (click)="switch()"></i>
         </nav>
 
-        <div class="header-social-links d-flex align-items-center"> <a href="#" class="twitter"><i
-                    class="bi bi-twitter"></i></a> <a href="#" class="facebook"><i class="bi bi-facebook"></i></a> <a
-                href="#" class="instagram"><i class="bi bi-instagram"></i></a> <a href="#" class="linkedin"><i
-                    class="bi bi-linkedin"></i></a></div>
+        <div class="header-social-links d-flex align-items-center"> 
+            <button [ngClass]="{'mx-2 btn btn-outline-info':true}" (click)="login()">{{value}}</button>
+            <a href="https://github.com/GabrielOsOj" target="_blank" class="github"><i class="bi bi-github"></i></a> 
+            <a href="https://ar.linkedin.com/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+        </div>
 
     </div>
 </header>

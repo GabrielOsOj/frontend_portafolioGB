@@ -22,29 +22,12 @@ export class InfoComponent implements OnInit, AfterViewInit {
 
   @Output() isOpen: EventEmitter<boolean> = new EventEmitter();
   @Input() openFromDom: boolean = false;
-
-  // @Input() Minfo: infMod = {
-  //   titulo: '',
-  //   url: [],
-  //   descripcion: '',
-  //   tecnologias: ["1","2","3","4"],
-  // };
-
-  //sacar lo de abajo
+  
   @Input() Minfo: infMod ={
-		"titulo": "clon de spotify",
-		"url": [
-			"http://localhost/mockParaPortafolio/fotosMock/spotifyLogo.jpg",
-			"http://localhost/mockParaPortafolio/fotosMock/spotifyLogoAzul.jpg",
-			"http://localhost/mockParaPortafolio/fotosMock/spotifyLogoRojo.jpg"
-		],
-		"descripcion": "clon funcional de spotify, desarrollado con angular, tipescript, html y css",
-		"tecnologias": [
-			["angular","f00"],
-			["tipescript","0ff"],
-			["bootstrap","a20"],
-			["html","e10"]
-		]
+		"titulo": "",
+		"url": [],
+		"descripcion": "",
+		"tecnologias": []
 	}
 
   constructor(private abstracte: Renderer2) {}

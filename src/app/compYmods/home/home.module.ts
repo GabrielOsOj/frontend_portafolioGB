@@ -15,6 +15,9 @@ import { HomeComponent } from './pagina/home.component';
 import { HeaderComponent } from '../componentes/header/header.component';
 import { PlantTarjetaComponent } from '../compCompartidos/plant-tarjeta/plant-tarjeta.component';
 import { PlantSkillComponent } from '../compCompartidos/plant-skill/plant-skill.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EdicionComponent } from '../compCompartidos/plant-modales/edit-modal/edicion/edicion.component';
+import { NuevoComponent } from '../compCompartidos/plant-modales/nuevo-modal/nuevo/nuevo.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { PlantSkillComponent } from '../compCompartidos/plant-skill/plant-skill.
     PlantSkillComponent,
     ProyectoTmpComponent,
     InfoComponent,
+    EdicionComponent,
+    NuevoComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule],
+  imports: [CommonModule, HomeRoutingModule, ReactiveFormsModule],
 })
 export class HomeModule {}

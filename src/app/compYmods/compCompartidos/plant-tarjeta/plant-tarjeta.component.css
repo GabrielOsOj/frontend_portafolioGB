@@ -1,7 +1,7 @@
 .box {
     width: 1024px;
     height: 284px;
-    border-radius: 5px;
+    border-radius: 4px;
     margin: 10px;
 
     transition: all .5s;
