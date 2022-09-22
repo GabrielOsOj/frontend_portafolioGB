@@ -1,5 +1,7 @@
 [
 	{
+		"id":1,
+		"tipo":"proyectos",
 		"titulo": "clon de spotify",
 		"url": [
 			"http://localhost/mockParaPortafolio/fotosMock/spotifyLogo.jpg",
@@ -27,6 +29,8 @@
 		]
 	},
 	{
+		"id":2,
+		"tipo":"proyectos",
 		"titulo": "Portafolio",
 		"url": [
 			"http://localhost/mockParaPortafolio/fotosMock/spotifyLogo.jpg",

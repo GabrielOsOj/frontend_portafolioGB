@@ -1,3 +1,4 @@
+import { UpdDelBTNComponent } from './../compCompartidos/crud-plants/updDel-plant/upd-del-btn/upd-del-btn.component';
 import { InfoComponent } from './../compCompartidos/plant-modales/info-modal/info.component';
 import { ProyectoTmpComponent } from './../compCompartidos/plant-proyecto/proyecto-tmp.component';
 import { NgModule } from '@angular/core';
@@ -10,12 +11,8 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path:"test",
-    component: ProyectoTmpComponent
-  },
-  {
-    path:"modalTest",
-    component: InfoComponent
+    path:'testZone',
+    component:UpdDelBTNComponent
   }
 
 ];
