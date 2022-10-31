@@ -19,6 +19,7 @@ export class ContactoComponent implements OnInit {
         mensaje: new FormControl("",[Validators.required, Validators.minLength(5),Validators.maxLength(400)]),
       }
     );
+
   }
 
  

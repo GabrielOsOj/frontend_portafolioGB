@@ -1,31 +1,24 @@
-.skillBox{
-    width: 100%;
+.skillBox {
     height: auto;
 }
 
-
-.titulo{
-    width: 100%;
-    text-align: center;
-    font-size: 30px;   
-
+.titulo {
+    font-size: 30px;
 }
 
-.skillContainer{
-    margin: auto;
-    width: 100%;
+.skillContainer {
     min-height: 250px;
-    
 }
 
 @media (max-width: 991px) {
-    .skillContainer{
+    .skillContainer {
         justify-content: space-evenly;
     }
 }
 
-@media (max-width:376) {
-    .cosa{
-        margin: auto;
-    }
+.newBtnBox {
+    height: 250px;
+    width: 250px;
+
+    padding-top: 50px;
 }

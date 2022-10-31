@@ -1,6 +1,7 @@
 <header id="header" [ngClass]="{'fixed-top d-flex align-items-center bg-secondary' : true,'bg-transparent':pos}">
 
-    <div class="container d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center">
+
         <div class="logo me-auto">
             <a href="index.html"><img src="../../../../assets/argentiaProgramaLogo.png" class="img img-fluid"></a>
         </div>
@@ -10,24 +11,26 @@
                 <li><a class="nav-link" (click)="goTo('#proyectos')">Proyectos</a></li>
                 <li><a class="nav-link" (click)="goTo('#estudios')">Estudios</a></li>
                 <li><a class="nav-link" (click)="goTo('#experiencia')">Experiencia</a></li>                
-                <li><a class="nav-link" (click)="goTo('#contacto')">Contacto</a></li>
+                <!-- <li><a class="nav-link" (click)="goTo('#contacto')">Contacto</a></li> -->
                     
             </ul> <i class="bi bi-list mobile-nav-toggle" (click)="switch()"></i>
         </nav>
 
         <nav id="navbar" *ngIf="!estado" class="navbar order-last order-lg-0 navbar-mobile">
             <ul>
-                <li><a class="nav-link scrollto" href="#hero" (click)="switch();goTo('')">Inicio</a></li>
-                <li><a class="nav-link scrollto" href="#portfolio" (click)="switch()">Proyectos</a></li>
-                <li><a class="nav-link scrollto" href="#pricing" (click)="switch()">Estudios</a></li>
-                <li><a class="nav-link scrollto" href="#contact" (click)="switch()">Experiencia</a></li>
-                <li><a class="nav-link scrollto" href="#contact" (click)="switch()">Contacto</a></li>
+                <li><a class="nav-link" (click)="goTo('#inicio')" (click)="switch()">Inicio</a></li>
+                <li><a class="nav-link" (click)="goTo('#proyectos')" (click)="switch()">Proyectos</a></li>
+                <li><a class="nav-link" (click)="goTo('#estudios')" (click)="switch()">Estudios</a></li>
+                <li><a class="nav-link" (click)="goTo('#experiencia')" (click)="switch()">Experiencia</a></li>                
+                <!-- <li><a class="nav-link" (click)="goTo('#contacto')" (click)="switch()">Contacto</a></li> -->
 
             </ul> <i class="bi bi-list mobile-nav-toggle bi-x" (click)="switch()"></i>
         </nav>
 
         <div class="header-social-links d-flex align-items-center"> 
-            <button [ngClass]="{'mx-2 btn btn-outline-info':true}" (click)="login()">{{value}}</button>
+            <button [ngClass]="{'mx-2 btn btn-outline-info':true}" *ngIf="!isLogged" (click)="logIn()">iniciar sesion</button>
+            <button [ngClass]="{'mx-2 btn btn-outline-info':true}" *ngIf="isLogged" (click)="logOut()">cerrar sesion</button>
+
             <a href="https://github.com/GabrielOsOj" target="_blank" class="github"><i class="bi bi-github"></i></a> 
             <a href="https://ar.linkedin.com/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
         </div>

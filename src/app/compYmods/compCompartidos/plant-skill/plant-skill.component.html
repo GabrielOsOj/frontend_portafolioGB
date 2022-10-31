@@ -1,64 +1,112 @@
-<div class="intRadio">
+<ng-container *ngIf="!isLogged">
 
-    <div class="circulo">
-        <div class="circulo-interior">
+    <div class="intRadio">
+
+        <div class="circulo">
             <div class="circulo-interior">
-                <div class="nomb">{{skill}}</div>
-                <div class="bigDiv1">
-                    <div [ngClass]="{'val der':true,'t':ToF[5]}" id="s60"></div>
-                    <div [ngClass]="{'val izq':true,'t':ToF[0]}" id="d10"></div>
-                </div>
-                <div class="bigDiv5">
-                    <div [ngClass]="{'val der':true,'t':ToF[7]}" id="o80"></div>
-                    <div [ngClass]="{'val izq':true,'t':ToF[2]}" id="t30"></div>
-                </div>
-                <div class="bigDiv2">
-                    <div [ngClass]="{'val der':true,'t':ToF[9]}" id="c100"></div>
-                    <div [ngClass]="{'val izq':true,'t':ToF[4]}" id="c50"></div>
-                </div>
-                <div class="bigDiv4">
-                    <div [ngClass]="{'val der':true,'t':ToF[8]}" id="n90"></div>
-                    <div [ngClass]="{'val izq':true,'t':ToF[3]}" id="c40"></div>
-                </div>
-                <div class="bigDiv3">
-                    <div [ngClass]="{'val der':true,'t':ToF[6]}" id="s70"></div>
-                    <div [ngClass]="{'val izq':true,'t':ToF[1]}" id="v20"></div>
-                </div>
+                <div class="circulo-interior">
+                    <div class="nomb">{{skill.titulo}}</div>
+                    <div class="bigDiv1">
+                        <div [ngClass]="{'val der':true,'t':ToF[5]}" id="s60"></div>
+                        <div [ngClass]="{'val izq':true,'t':ToF[0]}" id="d10"></div>
+                    </div>
+                    <div class="bigDiv5">
+                        <div [ngClass]="{'val der':true,'t':ToF[7]}" id="o80"></div>
+                        <div [ngClass]="{'val izq':true,'t':ToF[2]}" id="t30"></div>
+                    </div>
+                    <div class="bigDiv2">
+                        <div [ngClass]="{'val der':true,'t':ToF[9]}" id="c100"></div>
+                        <div [ngClass]="{'val izq':true,'t':ToF[4]}" id="c50"></div>
+                    </div>
+                    <div class="bigDiv4">
+                        <div [ngClass]="{'val der':true,'t':ToF[8]}" id="n90"></div>
+                        <div [ngClass]="{'val izq':true,'t':ToF[3]}" id="c40"></div>
+                    </div>
+                    <div class="bigDiv3">
+                        <div [ngClass]="{'val der':true,'t':ToF[6]}" id="s70"></div>
+                        <div [ngClass]="{'val izq':true,'t':ToF[1]}" id="v20"></div>
+                    </div>
 
+                </div>
             </div>
         </div>
+
     </div>
-</div>
+</ng-container>
 
+<!-- con modo edicion -->
 
-<!-- el de abajo es funcional -->
-<!-- <div class="intRadio">
+<ng-container *ngIf="isLogged">
+    <section class="skillContainer position-relative">
 
-    <div class="circulo">
-        <div class="circulo-interior">
-            <div class="bigDiv1">
-                <div class="val der" id="60"></div>
-                <div class="val izq" id="10"></div>
-            </div>
-            <div class="bigDiv5">
-                <div class="val der" id="100"></div>
-                <div class="val izq" id="50"></div>
-            </div>
-            <div class="bigDiv2">
-                <div class="val der" id="70"></div>
-                <div class="val izq" id="20"></div>
-            </div>
-            <div class="bigDiv4">
-                <div class="val der" id="90"></div>
-                <div class="val izq" id="40"></div>
-            </div>
-            <div class="bigDiv3">
-                <div class="val der" id="80"></div>
-                <div class="val izq" id="30"></div>
-            </div>
+        <section class="d-flex flex-row justify-content-end" *ngIf="status[0]">
+            <button class="btn btn-info mx-1"><i class="icon bi bi-pencil-square" (click)="closeOpen(1,0)"></i></button>
+            <button class="btn btn-danger mx-1"><i class="icon bi bi-x-square"(click)="closeOpen(2,0)" ></i></button>
+        </section>
 
+        <form *ngIf="status[1]"
+            class="editBox position-absolute top-50 start-50 translate-middle d-flex flex-column justify-content-evenly align-items-center h-75 w-100 bg-success rounded" 
+            [formGroup]="skillForm"
+            >
 
+            <i class="closeMod bi bi-x text-info" (click)="closeOpen(1,0)"></i>
+
+            <section class="titleInput w-75 d-flex flex-column justify-content-evenly">
+                <label class="text-center text-primary" for="nombre">Titulo</label>
+                <input type="text" name="nombre" id="" formControlName="titulo">
+            </section>
+
+            <section class="rangeInput w-75 d-flex flex-column justify-content-evenly">
+                <label class="text-center text-primary" for="rango">Rango</label>
+                <input class="rango" type="range" max="100" min="0"
+                name="rango" id="" formControlName="nivel">
+            </section>
+
+            <input class="btn btn-outline-info" type="submit" value="Guardar" (click)="guardar()">
+
+        </form>
+
+        <div class="editBox position-absolute top-50 start-50 translate-middle d-flex flex-column justify-content-center align-items-center h-50 w-100 bg-success rounded" *ngIf="status[2]">
+
+            <i class="closeMod bi bi-x text-info" (click)="closeOpen(0,2)"></i>
+
+            <h6 class="mt-2 text-info">¿Desea eliminar esta skill?</h6>
+
+            <input class="btn btn-outline-info" type="submit" value="aceptar" (click)="borrar(skill.idSkill)">
 
         </div>
-    </div>
-</div> -->
+
+        <div class="intRadio">
+
+            <div class="circulo">
+                <div class="circulo-interior">
+                    <div class="circulo-interior">
+                        <div class="nomb">{{skill.titulo}}</div>
+                        <div class="bigDiv1">
+                            <div [ngClass]="{'val der':true,'t':ToF[5]}" id="s60"></div>
+                            <div [ngClass]="{'val izq':true,'t':ToF[0]}" id="d10"></div>
+                        </div>
+                        <div class="bigDiv5">
+                            <div [ngClass]="{'val der':true,'t':ToF[7]}" id="o80"></div>
+                            <div [ngClass]="{'val izq':true,'t':ToF[2]}" id="t30"></div>
+                        </div>
+                        <div class="bigDiv2">
+                            <div [ngClass]="{'val der':true,'t':ToF[9]}" id="c100"></div>
+                            <div [ngClass]="{'val izq':true,'t':ToF[4]}" id="c50"></div>
+                        </div>
+                        <div class="bigDiv4">
+                            <div [ngClass]="{'val der':true,'t':ToF[8]}" id="n90"></div>
+                            <div [ngClass]="{'val izq':true,'t':ToF[3]}" id="c40"></div>
+                        </div>
+                        <div class="bigDiv3">
+                            <div [ngClass]="{'val der':true,'t':ToF[6]}" id="s70"></div>
+                            <div [ngClass]="{'val izq':true,'t':ToF[1]}" id="v20"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</ng-container>

@@ -117,10 +117,30 @@
     transform: scale(1.05);
 }
 
+/* modoEdicio */
 
+.editBox{
+    z-index: 500;
+}
 
+.rango{
+    accent-color: var(--colorN2);
+}
 
+.closeMod{
+    height: 10px;
+    font-size: 30px;
 
+    position: absolute;
+    top:0;
+    left: 85%;
+
+    filter: brightness(.7);
+}
+
+.closeMod:hover{
+    filter: brightness(1);
+}
 
 
 

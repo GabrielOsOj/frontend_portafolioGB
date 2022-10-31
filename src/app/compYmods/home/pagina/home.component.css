@@ -9,3 +9,7 @@
     width: 72%;
 }
 
+.index{
+    z-index: 999 !important;
+}
+

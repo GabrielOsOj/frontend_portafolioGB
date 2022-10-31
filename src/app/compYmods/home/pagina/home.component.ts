@@ -1,4 +1,6 @@
-import { discardPeriodicTasks } from '@angular/core/testing';
+import { EditDeleteCreateService } from './../../servicios/edit-delete-createSv/edit-delete-create.service';
+import { LoginService } from './../../servicios/loginSv/login.service';
+
 import { Component, OnInit, ElementRef } from '@angular/core';
 
 @Component({
@@ -7,17 +9,29 @@ import { Component, OnInit, ElementRef } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private lgsv: LoginService,
+    public editSv: EditDeleteCreateService
+  ) {}
 
-  contieneEv: Array<ElementRef> = [];
+  isLogged = false;
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    this.hasLogged();
+    
+  }
+ 
+  hasLogged(): void {
+    if (this.lgsv.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  }
 
   get(cos: string) {
-     document.getElementById(cos)?.scrollIntoView();
+    document.getElementById(cos)?.scrollIntoView();
 
-     window.scrollTo(0,window.pageYOffset-113)
-
+    window.scrollTo(0, window.pageYOffset - 113);
   }
 }

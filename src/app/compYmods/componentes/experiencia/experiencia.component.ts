@@ -1,7 +1,6 @@
+import {  estYexpIF } from './../../../Interfaces/estandar-interface';
 import { ExpSvService } from './../../servicios/expSv/exp-sv.service';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { expYest } from 'src/app/Interfaces/exp-interface';
-import { Subscription } from 'rxjs';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-experiencia',
@@ -9,21 +8,28 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./experiencia.component.css'],
 })
 export class ExperienciaComponent implements OnInit, OnDestroy {
-  objetoTest: Array<expYest> = new Array<expYest>();
+  expLab: Array<estYexpIF> = [];
+  backRes: boolean = false;
+
+
+  @Input() isLogged:boolean =false;
 
   constructor(private datos: ExpSvService) {}
 
   ngOnInit(): void {
     this.impExp();
-  }
+  } 
 
   impExp() {
     this.datos.$exp.subscribe({
       next: (r) => {
-        this.objetoTest = r;
+        this.expLab = r;
+        this.backRes = true;
       }
     });
   }
 
-  ngOnDestroy(): void {}
+  ngOnDestroy(): void {
+    
+  }
 }
