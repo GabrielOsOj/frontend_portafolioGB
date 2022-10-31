@@ -1,61 +1,58 @@
-import { infMod } from './../../../Interfaces/infModal-interface';
+import { estandar, proyectoIF } from './../../../Interfaces/estandar-interface';
 import {
   Component,
   OnInit,
   ViewChild,
   ElementRef,
-  Renderer2,
-  AfterViewInit,
   Input,
+  Renderer2,
 } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-proyecto-tmp',
   templateUrl: './proyecto-tmp.component.html',
   styleUrls: ['./proyecto-tmp.component.css'],
 })
-export class ProyectoTmpComponent implements OnInit, AfterViewInit {
-  @ViewChild('after') box1!: ElementRef;
-  @ViewChild('textC') box2!: ElementRef;
-
-  after!: ElementRef;
-  textC!: ElementRef;
-
-  @Input() info: infMod = {
-    titulo: '',
-    url: [],
+export class ProyectoTmpComponent implements OnInit {
+  @Input() info: proyectoIF = {
     descripcion: '',
-    tecnologias: [],
+    id: 0,
+    titulo: '',
+    idImg: [],
   };
 
-  open: boolean = false;
+  constructor(private render: Renderer2) {}
 
-  ngAfterViewInit(): void {
-    this.after = this.box1.nativeElement;
-    this.textC = this.box2.nativeElement;
+  @ViewChild('primeraImg')
+  img1!: ElementRef;
+
+  ngOnInit(): void {}
+
+  urlImgs = environment.urlImagenes;
+
+  posicion: number = -250;
+
+  izq() {
+    const img1 = this.img1.nativeElement;
+    if (this.posicion < -250) {
+      this.posicion += 250;
+      this.render.setStyle(img1, 'margin-left', `${this.posicion}px`);
+    } else if (this.posicion == -250) {
+      this.posicion += -250*(this.info.idImg.length-1);
+      this.render.setStyle(img1, 'margin-left', `${this.posicion}px`);
+    }
   }
 
-  constructor(private abstract: Renderer2) {}
+  der() {
+    const img1 = this.img1.nativeElement;
 
-  mouseIn() {
-    this.abstract.setStyle(this.after, 'animation-name', 'afterIn');
-    this.abstract.setStyle(this.textC, 'animation-name', 'textCin');
-  }
-  mouseOut() {
-    this.abstract.setStyle(this.after, 'animation-name', 'afterOut');
-    this.abstract.setStyle(this.textC, 'animation-name', 'textCout');
-  }
-
-  open_closed() {
-    this.open == false ? (this.open = true) : (this.open = false);
-  }
-
-  closeFromMod($event: boolean) {
-    setTimeout(() => {
-      this.open = $event;
-    }, 430);
-  }
-
-  ngOnInit(): void {
+    if (this.posicion > -250*this.info.idImg.length) {
+      this.posicion -= 250;
+      this.render.setStyle(img1, 'margin-left', `${this.posicion}px`);
+    } else {
+      this.posicion += 250*(this.info.idImg.length-1);
+      this.render.setStyle(img1, 'margin-left', `${this.posicion}px`);
+    }
   }
 }

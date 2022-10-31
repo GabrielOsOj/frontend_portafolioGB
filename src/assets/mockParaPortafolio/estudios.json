@@ -1,29 +1,53 @@
-[{	
-	"id":1,
-	"tipo":"estudio",
-	"titulo":"Colegio Incorporado San Andres",
-	"url":["http://localhost/mockParaPortafolio/fotosMock/descarga.jfif"],
-	"descripcion":"secundiaro cursado y completo"	
-},
-{	
-	"id":2,
-	"tipo":"estudio",
-	"titulo":"Unsam",
-	"url":["http://localhost/mockParaPortafolio/fotosMock/uns.png"],
-	"descripcion":"cursando actualmente la tecnicatura en programacion informatica"
-	
-},
-{	
-	"id":3,
-	"tipo":"estudio",
-	"titulo":"Argentina Programa",
-	"url":["http://localhost/mockParaPortafolio/fotosMock/argentiaProgramaLogo.png"],
-	"descripcion":"cursando actualmente"
-},
-{	
-	"id":4,	
-	"tipo":"estudio",
-	"titulo":"udemy",
-	"url":["http://localhost/mockParaPortafolio/fotosMock/Udemy_logo.svg.png"],
-	"descripcion":"cursos de manera autodidacta"
-}]
+[
+	{
+		"id": 1,
+		"tipo": "estudio",
+		"titulo": "Colegio Incorporado San Andres",
+		"imgs": [
+			{
+				"id": 8,
+				"nombre": "img1",
+				"url": "http://localhost/mockParaPortafolio/fotosMock/descarga.jfif"
+			}
+		],
+		"descripcion": "secundiaro cursado y completo"
+	},
+	{
+		"id": 2,
+		"tipo": "estudio",
+		"titulo": "Unsam",
+		"imgs": [
+			{
+				"id": 5,
+				"nombre": "img1",
+				"url": "http://localhost/mockParaPortafolio/fotosMock/uns.png"
+			}
+		],
+		"descripcion": "cursando actualmente la tecnicatura en programacion informatica"
+	},
+	{
+		"id": 3,
+		"tipo": "estudio",
+		"titulo": "Argentina Programa",
+		"imgs": [
+			{
+				"id": 10,
+				"nombre": "img1",
+				"url": "http://localhost/mockParaPortafolio/fotosMock/argentiaProgramaLogo.png"
+			}
+		],
+		"descripcion": "cursando actualmente"
+	},
+	{
+		"id": 4,
+		"tipo": "estudio",
+		"titulo": "udemy",
+		"imgs": [{
+			"id": 10,
+			"nombre": "img1",
+			"url":"http://localhost/mockParaPortafolio/fotosMock/Udemy_logo.svg.png"
+		}
+		],
+		"descripcion": "cursos de manera autodidacta"
+	}
+]

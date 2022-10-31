@@ -17,6 +17,7 @@
 
 .iconMod {
     font-size: 40px;
+    z-index: 900;
     text-align: right;
 }
 
@@ -31,4 +32,27 @@
 
 .icon{
     z-index: 500;
+}
+
+.tecCont{
+    min-width: 100px;
+
+}
+
+.nuevo{
+    width: 218px;
+}
+
+
+/* testZone */
+
+.testMod{
+    content: "";
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(50, 130, 184, .1);
+
+    z-index: 600;
 }

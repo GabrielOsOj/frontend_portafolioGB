@@ -1,5 +1,5 @@
 export interface SkillsInterface {
-  id: number;
+  idSkill: number;
   nivel: number;
   titulo: string;
 }

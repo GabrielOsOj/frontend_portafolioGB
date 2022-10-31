@@ -1,3 +1,4 @@
+import { environment } from './../../../../environments/environment';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -9,5 +10,7 @@ export class EstudiosService {
 
   constructor(private peticion:HttpClient) { }
 
-  $resEstudios:Observable<any>=this.peticion.get("../../../../assets/mockParaPortafolio/estudios.json");
+  private readonly url = environment.urlCrudSv;
+
+  $resEstudios:Observable<any>=this.peticion.get(`${this.url}estYexp/estudio`);
 }

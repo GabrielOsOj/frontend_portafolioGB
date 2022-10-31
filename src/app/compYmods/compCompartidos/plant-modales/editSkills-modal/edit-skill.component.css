@@ -1,0 +1,14 @@
+.bg-template{
+    background-color: rgba(50, 130, 184, .1);
+    z-index: 900;
+}
+
+.iconMod {
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+.iconMod:hover {
+    cursor: pointer;
+    filter: brightness(.5)
+}

@@ -1,20 +1,19 @@
-<section class="mt-3 skillBox d-flex justify-content-center flex-column">
+<section class="mt-3 w-100 d-flex justify-content-center flex-column">
 
-    <p class="titulo text-info">Habilidades</p>
+     
+    <p class="titulo text-info text-center w-100">Habilidades</p>
 
     <div class="skillContainer d-flex flex-wrap justify-content-evenly
-    aling-items-between">
+    aling-items-between w-100">
 
-        <section class="cosa" *ngFor="let skill of resSkillArr">
-            <app-plant-skill [skill]="skill.titulo" [rango]="skill.nivel"></app-plant-skill>
+
+        <app-plant-skill *ngFor="let skill of resSkillArr , index as i" [skill]="resSkillArr[i]"></app-plant-skill>
+
+        <section *ngIf="isLogged" class="newBtnBox d-flex justify-content-center align-items-center">
+            <app-create-btn [crear]=1></app-create-btn>
         </section>
-
-
-        <!-- fijate que cuando se hace responsive, el mx hace algo raro.. -->
+    
     </div>
-
-
-
 
 
 </section>

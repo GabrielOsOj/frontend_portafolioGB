@@ -1,38 +1,37 @@
 [
     {
-        "id":1,
-        "tipo":"skill",
-        "titulo": "javascript",
-        "nivel": "70"
+        "idSkill": 1,
+        "titulo": "JavasScript",
+        "nivel": 70
     },
     {
-        "id":2,
-        "tipo":"skill",
+        "id": 2,
+        "tipo": "skill",
         "titulo": "angular",
-        "nivel": "70"
+        "nivel": 70
     },
     {
-        "id":3,
-        "tipo":"skill",
+        "id": 3,
+        "tipo": "skill",
         "titulo": "mySql",
-        "nivel": "70"
+        "nivel": 70
     },
     {
-        "id":4,
-        "tipo":"skill",
+        "id": 4,
+        "tipo": "skill",
         "titulo": "java",
-        "nivel": "40"
+        "nivel": 40
     },
     {
-        "id":5,
-        "tipo":"skill",
+        "id": 5,
+        "tipo": "skill",
         "titulo": "springboots",
-        "nivel": "40"
+        "nivel": 40
     },
     {
-        "id":6,
-        "tipo":"skill",
+        "id": 6,
+        "tipo": "skill",
         "titulo": "html,css",
-        "nivel": "80"
+        "nivel": 80
     }
 ]

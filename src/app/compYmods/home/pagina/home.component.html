@@ -1,22 +1,25 @@
-<app-header (newItemEvent)="get($event)"></app-header>
-<app-principal id="#inicio"></app-principal>
+<app-header (newItemEvent)="get($event)" *ngIf="!editSv.$open[1][0]&&!editSv.$open[0][0]&&!editSv.$open[0][1]&&!editSv.$open[0][2]"></app-header>
 
-<div class="division mt-3 exp"></div>
+<app-principal id="#inicio"></app-principal>
 <div class="stand">
-    <app-experiencia id="#experiencia"></app-experiencia>
+    <app-experiencia id="#experiencia" [isLogged]="isLogged">
+    </app-experiencia>
 
     <div class="division mt-3" id="#estudios"></div>
-    <app-estudios></app-estudios>
+    <app-estudios [isLogged]="isLogged"></app-estudios>
 
     <div class="division mt-3" id="#habilidades"></div>
-    <app-skills></app-skills>
+    <app-skills [isLogged]="isLogged"></app-skills>
 
-    <div class="division mt-3" id="#proyectos"></div>
-    <app-proyectos></app-proyectos>
+    <app-proyectos [isLogged]="isLogged"></app-proyectos>
 
-    <div class="division mt-3" id="#contacto"></div>
-    <app-contacto></app-contacto>
+    <!-- <div class="division mt-3" id="#contacto"></div>
+    <app-contacto></app-contacto> -->
 
 
 </div>
 <app-footer id="pag7"></app-footer>
+
+<app-edit *ngIf="editSv.$open[0][0]||editSv.$open[0][1]||editSv.$open[0][2]" class="index"></app-edit>
+<app-edit-skill *ngIf="editSv.$open[1][0]" class="index"></app-edit-skill>
+<app-proyectos-edit-modal *ngIf="editSv.$open[2][0] || editSv.$open[2][1] ||editSv.$open[2][2]"></app-proyectos-edit-modal>

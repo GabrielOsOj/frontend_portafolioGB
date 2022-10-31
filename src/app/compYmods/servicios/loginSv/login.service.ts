@@ -1,4 +1,6 @@
-import { Observable, tap } from 'rxjs';
+import { userTokken } from './../../../Interfaces/userTokken-interface';
+import { environment } from './../../../../environments/environment';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -8,24 +10,33 @@ import { Injectable } from '@angular/core';
 export class LoginService {
   constructor(private peticion: HttpClient) {}
 
-  //cambiar a false
-  $login: boolean = true;
+  urlBack: string = environment.urlCrudSv;
 
-  public login(email: string, password: string): Observable<any> {
-    let body = {
-      email,
-      password,
-    };
-    //para maqueta, es una peticion get a un json estatico, cambia la
-    //peticion a post y agrega el body de arriva junto a la url del backend
-    return this.peticion
-      .get('../../../../assets/mockParaPortafolio/login.json')
-      .pipe(
-        tap((res: any) => {
-          const { valid, TokenSession } = res;
-          this.$login = valid;
-          sessionStorage.setItem('sessionToken', TokenSession);
-        })
-      );
+  public logStatus = false;
+
+  public login(body: object): Observable<any> {
+    return this.peticion.post(`${this.urlBack}login/iniciar`, body).pipe(
+      tap((res: any) => {
+        let tokken: userTokken = res;
+        window.sessionStorage.setItem('id', tokken.id.toString());
+        window.sessionStorage.setItem('tokken', tokken.tokken);
+      })
+    );
+  }
+
+  public getToken(): string {
+    return sessionStorage.getItem('tokken')!;
+  }
+
+  public logOut() {
+    this.peticion.get(`${this.urlBack}login/cerrarSession`).subscribe({
+      next: () => {
+        sessionStorage.removeItem('tokken');
+        sessionStorage.removeItem('id');
+
+        alert('Gracias por la edicion :D');
+        window.location.reload();
+      },
+    });
   }
 }

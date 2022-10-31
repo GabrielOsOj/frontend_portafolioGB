@@ -16,9 +16,13 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private lgs: LoginService) {}
 
   ngOnInit(): void {
+    this.formInit();
+  }
+
+  formInit():void{
     this.loginFormGroup = new FormGroup({
       email: new FormControl('', [Validators.email, Validators.required]),
-      password: new FormControl('', [
+      contraseña: new FormControl('', [
         Validators.required,
         Validators.minLength(5),
         Validators.maxLength(400),
@@ -27,11 +31,10 @@ export class LoginComponent implements OnInit {
   }
 
   goPlaces() {
-    let { email, password } = this.loginFormGroup.value;
-
-    this.lgs.login(email, password).subscribe({
+    
+    this.lgs.login(this.loginFormGroup.value).subscribe({
       next: () => {
-        this.router.navigate(['/','H'])
+        this.router.navigate([''])
       },
       error: (e) => {
         console.log(e);

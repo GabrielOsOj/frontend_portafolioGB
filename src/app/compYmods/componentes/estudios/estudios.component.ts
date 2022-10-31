@@ -1,6 +1,6 @@
-import { expYest } from 'src/app/Interfaces/exp-interface';
+import { estandar, estYexpIF } from './../../../Interfaces/estandar-interface';
 import { EstudiosService } from './../../servicios/estudiosSv/estudios.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-estudios',
@@ -11,7 +11,11 @@ export class EstudiosComponent implements OnInit {
 
   constructor(private resEst:EstudiosService) { }
 
-  estudios:Array<expYest>=new Array;
+  @Input() isLogged:boolean =false;
+
+  estudios:Array<estYexpIF>= [];
+
+  backRes:boolean = false;
 
   ngOnInit(): void {
     
@@ -22,7 +26,8 @@ export class EstudiosComponent implements OnInit {
   impEstudios(){
     this.resEst.$resEstudios.subscribe({
       next: r=>{
-        this.estudios=r
+        this.estudios=r;
+        this.backRes=true;
       }
     })
   }

@@ -1,8 +1,30 @@
-export interface estandar{
+import { imgEstandar } from './imgEstandar-interface';
+
+export interface claseMaestra{
     id:number,
-    tipo:string,
     titulo:string,
-    url:Array<string>,
+    tipo?:string
+}
+
+export interface estandar extends claseMaestra{
+    imagenes:Array<imgEstandar>,
     descripcion:string,
-    tecnologias?:Array<Array<string>>
+}
+
+export interface proyectoIF extends claseMaestra{
+    descripcion:string;
+    idImg:Array<number>
+}
+
+export interface estYexpIF extends claseMaestra{
+    descripcion:string,
+    url:string,
+}
+
+export interface varios{
+    id:number,
+    nombre:string,
+    titulo:string,
+    descripcion:string,
+    url:string
 }

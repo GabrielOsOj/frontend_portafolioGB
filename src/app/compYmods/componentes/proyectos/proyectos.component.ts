@@ -1,6 +1,6 @@
-import { infMod } from './../../../Interfaces/infModal-interface';
+import { estandar, proyectoIF } from './../../../Interfaces/estandar-interface';
 import { ProyectosService } from './../../servicios/proyectosSv/proyectos.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-proyectos',
@@ -9,21 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProyectosComponent implements OnInit {
 
-  constructor(private r:ProyectosService) { }
+  constructor(private proyectosRes:ProyectosService) { }
 
-  resProyectos:Array<infMod>=[];
+  @Input() isLogged:boolean=false;
+
+  resProyectos:Array<proyectoIF>=[];
+
+  BackRes:boolean=false;
 
   ngOnInit(): void {
     this.sus()
   }
 
-  //haber quede que tengo que hacer llegar la respuesta del json al componente
-  //y al modal, hice una interfaz, hace llegar el json, toy quemadisimo
 
   sus(){
-    this.r.$resProyectos.subscribe({
+    this.proyectosRes.$resProyectos.subscribe({
       next:(r)=>{
         this.resProyectos=r;
+        this.BackRes=true;
       }
     })
   }
