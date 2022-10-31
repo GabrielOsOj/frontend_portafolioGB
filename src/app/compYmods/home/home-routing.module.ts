@@ -9,14 +9,6 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-  },
-  {
-    path: 'test',
-    component:ProyectoTmpComponent
-  },
-  {
-    path:'editPro',
-    component:ProyectosEditModalComponent
   }
 ];
 
