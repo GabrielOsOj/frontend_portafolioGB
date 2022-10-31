@@ -1,0 +1,33 @@
+<ng-container *ngIf="true">
+
+    <section [ngClass]="{'box d-flex bg-secondary align-items-center justify-content-evenly':true, 'derechoF':derecho}">
+
+        <div class="imgContainer border border-5 border-primary">
+            <img src="{{url}}/estYexp/?url={{exp.id}}" class="imgC w-100 h-100" alt="">
+        </div>
+
+        <div class="TyPcontainer d-flex flex-column align-items-evenly">
+
+            <!-- maximo 120 caracteres, ponele ese limite de alguna forma -->
+            <p class="titulo text-info text-wrap fs-2">{{exp.titulo}}
+            </p>
+
+
+            <!-- maximo 700 caracteres, fijate de ponerle ese limite, sino queda feo -->
+            <p class="info text-info text-wrap fs-6">{{exp.descripcion}}</p>
+
+
+        </div>
+
+    </section>
+
+</ng-container>
+
+
+
+<!-- 
+    -falta
+    login y validacion
+    terminar el modo edicion de los proyectos
+    boton para añadir estudios, proyectos y experiencias laborales -->
+

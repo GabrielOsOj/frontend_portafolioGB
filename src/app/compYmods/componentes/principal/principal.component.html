@@ -1,14 +1,102 @@
-<div class="pag1">
-    <div class="test d-flex justify-content-center align-items-center">
+<ng-container *ngIf="!isLogged && ready">
 
-        <div>
-            <img src="../../../../assets/userPhotoStock.png">
-        </div>
-        <div class="d-flex flex-column align-items-center justify-content-center text-white d">
-          <h2 class="p">Full Stack Developer</h2>
-          <p class="p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla repudiandae, delectus voluptate quisquam similique corporis, culpa voluptates reprehenderit at laboriosam eius dicta perferendis animi exercitationem unde facilis molestiae. A excepturi cupiditate fuga? Debitis facilis necessitatibus facere minus velit suscipit eaque quod incidunt asperiores ex? Ipsum vitae eos ad eligendi? Et?</p>
+    <div class="pag1 w-100">
+        <div class="filter container d-flex justify-content-center align-items-center w-100 h-100">
+
+            <div class="ImgContainer rounded">
+                <img src="{{urlImgs}}/varios?id={{datos.id}}" class="img">
+            </div>
+
+            <div class="d-flex flex-column align-items-center justify-content-center text-white w-50 ms-3">
+                <h2 class="w-100 text-center">{{datos.titulo}}</h2>
+                <p class="w-100 text-center">{{datos.descripcion}}</p>
+            </div>
+
+
         </div>
 
 
     </div>
-</div>
+
+</ng-container>
+
+<ng-container *ngIf="isLogged && ready">
+
+    <div class="pag1 w-100">
+
+
+        <div class="filter container d-flex justify-content-center align-items-center w-100 h-100 ">
+
+
+            <div class="ImgContainer rounded">
+                <img src="{{urlImgs}}/varios?id={{datos.id}}" class="img">
+            </div>
+
+            <div
+                class="d-flex flex-column align-items-center justify-content-center text-white w-50 ms-3 position-relative">
+
+                <button class="btn btn-info mx-1 position-absolute top-0 start-100 translate-middle"
+                    (click)="closeOpen()">
+                    <i class="icon bi bi-pencil-square"></i>
+                </button>
+                <h2 class="w-100 text-center">{{datos.titulo}}</h2>
+                <p class="w-100 text-center">{{datos.descripcion}}</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</ng-container>
+
+<ng-container *ngIf="status">
+
+    <form [formGroup]="editForm"
+        class="editBox position-absolute top-50 start-50 translate-middle d-flex flex-column justify-content-evenly align-items-center h-75 w-50 bg-success rounded">
+
+        <i class="closeMod bi bi-x text-info position-absolute top-0 end-0 mx-2" (click)="closeOpen()"></i>
+
+
+        <section class="w-75 h-50 d-flex flex-row align-items-evenly">
+
+            <div class="w-50 h-100 mx-2 position-relative">
+
+                <div class="btnImg position-absolute top-50 start-50 translate-middle w-75 h-75" (click)="activarInp()">
+
+                    <i class="iUpload fs-1 bi bi-cloud-upload position-absolute top-50 start-50 translate-middle text-primary"></i>
+
+                    <input type="file" name="userImg" id="" (change)="cargaImg($event)" class="fileBtn" #input>
+
+                </div>
+
+                <img class="position-absolute top-50 start-50 translate-middle w-75 h-75"
+                    src="{{urlImgs}}/varios?id={{datos.id}}" alt="">
+
+            </div>
+
+            <section class="titleInput w-50 d-flex flex-column justify-content-evenly">
+
+                <label class="text-center text-info fs-3" for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="" formControlName="nombre">
+
+                <label class="text-center text-info fs-3" for="titulo">Titulo</label>
+                <input type="text" name="titulo" id="" formControlName="titulo">
+
+            </section>
+
+
+
+        </section>
+
+
+        <section class="rangeInput w-75 h-25 d-flex flex-column justify-content-evenly">
+            <label class="text-center text-info fs-3" for="descripcion">Sobre mi</label>
+            <textarea type="text" name="descripcion" id="" formControlName="descripcion"></textarea>
+        </section>
+
+        <input class="btn btn-outline-info btn-lg" type="submit" value="Guardar" (click)="guardarDatos()">
+
+    </form>
+
+</ng-container>

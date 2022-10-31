@@ -1,0 +1,24 @@
+.skillBox {
+    height: auto;
+}
+
+.titulo {
+    font-size: 30px;
+}
+
+.skillContainer {
+    min-height: 250px;
+}
+
+@media (max-width: 991px) {
+    .skillContainer {
+        justify-content: space-evenly;
+    }
+}
+
+.newBtnBox {
+    height: 250px;
+    width: 250px;
+
+    padding-top: 50px;
+}

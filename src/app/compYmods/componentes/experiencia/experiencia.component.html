@@ -1,1 +1,40 @@
-<p>experiencia works!</p>
+<ng-container *ngIf="!isLogged && backRes && expLab.length!=0">
+
+    <div class="division mt-3 exp"></div>
+
+    <section class="container-fluid d-flex align-items-center justify-content-center flex-column">
+
+        <p class="p text-white fs-4">Experiencia</p>
+
+        <div class="cardContainer box">
+            <app-plant-tarjeta *ngFor="let exp of expLab" class="flex-row-reverse" [exp]="exp"></app-plant-tarjeta>
+
+        </div>
+
+
+    </section>
+</ng-container>
+
+<ng-container *ngIf="isLogged && backRes">
+
+    <div class="division mt-3 exp"></div>
+
+    <section class="container-fluid d-flex align-items-center justify-content-center flex-column">
+
+        <p class="p text-white fs-4">Experiencia</p>
+
+
+        <section *ngFor="let exp of expLab" class="position-relative box">
+
+            <app-upd-del-btn class="position-absolute top-0 end-0" [objEdit]="exp" [seccion]="0"></app-upd-del-btn>
+            <app-plant-tarjeta class="flex-row-reverse" [exp]="exp">
+            </app-plant-tarjeta>
+
+        </section>
+
+        <section class="nwBtn d-flex justify-content-center align-items-center w-100">
+            <app-create-btn [crear]="0" [tipo]="'experiencia'"></app-create-btn>
+        </section>
+
+    </section>
+</ng-container>

@@ -1,0 +1,80 @@
+.editBoxContainer__box {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 20px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 10px 20px;
+
+    z-index: 900;
+   
+}
+
+.editBoxContainer::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    
+    background-color: rgba(50, 130, 184, .1);
+
+    z-index: 910;
+}
+
+.icon {
+    font-size: 25px;
+    z-index: 700;
+}
+
+.bg-template {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .1);
+    z-index: 910;
+
+}
+
+.confirmDelBox {
+    width: 350px;
+    height: 200px;
+    background-color: #000;
+}
+
+.iconMod {
+    font-size: 40px;
+    z-index: 900;
+    text-align: right;
+}
+
+.iconMod:hover {
+    cursor: pointer;
+    filter: brightness(.5)
+}
+
+.select{
+    filter:brightness(.5);
+}
+
+.icon{
+    z-index: 500;
+}
+
+.tecCont{
+    min-width: 100px;
+
+}
+
+.nuevo{
+    width: 218px;
+}
+
+.lblText{
+    font-size: 15px;
+}
+

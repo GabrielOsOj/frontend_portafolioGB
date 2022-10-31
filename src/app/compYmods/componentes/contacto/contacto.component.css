@@ -1,0 +1,56 @@
+.ContactoPage {
+    width: 100%;
+}
+
+.ContactoPage__titulo {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+
+.ContactPage__formBox {
+    width: 572px;
+    height: 350px;
+    margin: auto;
+
+}
+
+.ContactPage__formBox--inputBox {
+    width: 100%;
+}
+
+.ContactPage__formBox--emailBox-email,
+.ContactPage__formBox--inputBox-mensaje {
+    background-color: var(--colorN2);
+    border: none;
+    border-radius: 4px;
+    width: 90%;
+    margin: 0 auto;
+
+    height: 50px;
+}
+
+.ContactPage__formBox--inputBox-mensaje {
+    height: 170px;
+    resize: none;
+}
+.ContactPage__formBox--inputBox-mensaje::placeholder{
+    color: var(--colorN1);
+    text-align: center;
+}
+
+.ContactPage__formBox--emailBox-email:focus,
+.ContactPage__formBox--inputBox-mensaje:focus {
+    outline: none;
+}
+
+.ContactPage__formBox--inputBox-btn {
+    margin: 0 auto;
+    width: 45%;
+    height: 45px;
+    border: none;
+}
+
+.ContactPage__formBox--inputBox-btn:disabled{
+    opacity: .5;
+}

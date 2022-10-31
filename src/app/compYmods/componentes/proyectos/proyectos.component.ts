@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { estandar, proyectoIF } from './../../../Interfaces/estandar-interface';
+import { ProyectosService } from './../../servicios/proyectosSv/proyectos.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-proyectos',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProyectosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private proyectosRes:ProyectosService) { }
+
+  @Input() isLogged:boolean=false;
+
+  resProyectos:Array<proyectoIF>=[];
+
+  BackRes:boolean=false;
 
   ngOnInit(): void {
+    this.sus()
   }
 
+
+  sus(){
+    this.proyectosRes.$resProyectos.subscribe({
+      next:(r)=>{
+        this.resProyectos=r;
+        this.BackRes=true;
+      }
+    })
+  }
 }

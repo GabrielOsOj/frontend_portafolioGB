@@ -1,22 +1,75 @@
 .pag1 {
     height: 40rem;
-    width: 100%;
-  
-    background-image:url("../../../../assets/argProgBanner.jpg");
- 
+
+    background-image: url("../../../../assets/argProgBanner.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
 }
-.test{
+
+.ImgContainer {
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+}
+
+.img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 767px) {
+
+    .pag1 {
+        height: 80rem;
+
+    }
+
+    .container {
+        flex-direction: column;
+        height: 50rem;
+    }
+
+}
+
+
+.filter {
     backdrop-filter: blur(5px);
 }
 
-.p{
-    text-align: center;
-    width: 85%;
+
+.closeMod {
+    font-size: 50px;
+    filter: brightness(.5);
+    z-index: 800;
 }
 
-.d{
-    width: 55%;
+.imgBtn:hover,
+.closeMod:hover {
+    cursor: pointer;
+    filter: brightness(1);
 }
+
+.btnImg {
+    z-index: 500;
+    opacity: 0;
+    display: grid;
+    place-content: center;
+}
+
+.btnImg:hover{
+    opacity: 1;
+    background: var(--colorN4);
+    cursor: pointer;
+}
+
+.iUpload{
+    cursor: pointer;
+
+}
+.fileBtn{
+    cursor: pointer;
+
+    opacity: 0;
+}
+

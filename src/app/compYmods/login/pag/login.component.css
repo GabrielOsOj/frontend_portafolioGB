@@ -1,0 +1,10 @@
+.inp:focus{
+   outline: 1px solid var(--colorN3);
+}  
+
+.form_infoBox{
+    text-align: center;
+    
+    width: 100%;
+    height: 40px;
+}

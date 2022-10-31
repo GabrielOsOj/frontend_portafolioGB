@@ -1,1 +1,30 @@
-<p>estudios works!</p>
+
+<ng-container *ngIf="!isLogged && backRes && estudios.length!=0" >
+    <section class="classContainer mt-2 container-fluid d-flex align-items-center justify-content-center flex-column">
+
+        <p class="pa text-info fs-4">Estudios</p>
+        <div *ngIf="estudios.length!=0">
+            <app-plant-tarjeta [exp]="estudio" *ngFor="let estudio of estudios" [derecho]="true"></app-plant-tarjeta>
+
+        </div>
+
+    </section>
+</ng-container>
+
+<ng-container *ngIf="isLogged && backRes" >
+    <section class="classContainer mt-2 container-fluid d-flex align-items-center justify-content-center flex-column">
+
+        <p class="pa text-info fs-4">Estudios</p>
+        <section *ngFor="let estudio of estudios" class="cardContainer position-relative">
+            
+            <app-upd-del-btn class="position-absolute top-0 end-0" [objEdit]="estudio" [seccion]="0" ></app-upd-del-btn>
+            <app-plant-tarjeta [exp]="estudio" [derecho]="true"></app-plant-tarjeta>
+
+        </section>
+
+        <section class="nwBtn d-flex justify-content-center align-items-center w-100">
+            <app-create-btn [crear]="0" [tipo]="'estudio'"></app-create-btn>
+        </section>
+        
+    </section>
+</ng-container>

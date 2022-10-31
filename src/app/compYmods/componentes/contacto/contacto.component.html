@@ -1,1 +1,30 @@
-<p>contacto works!</p>
+<section class="ContactoPage">
+
+    <p class="ContactoPage__titulo text-info mt-3 ">Contacto</p>
+
+    <form action="" [formGroup]="formMS" class="ContactPage__formBox d-flex flex-column justify-content-around mt-3">
+
+        <section class="ContactPage__formBox--inputBox d-flex flex-column">
+
+            <label for="email" class="ContactPage__formBox--inputBox-emailLabel text-info text-center ">Tu email</label>
+            <input type="email" name="email" id="" class="ContactPage__formBox--emailBox-email text-info" formControlName="email">
+
+        </section>
+
+        <section class="ContactPage__formBox--inputBox d-flex flex-column">
+
+            <label for="mensaje"
+                class="ContactPage__formBox--inputBox-mensajeLabel text-info text-center ">Mensaje</label>
+            <textarea name="mensaje" id="" cols="30" rows="10" class="ContactPage__formBox--inputBox-mensaje text-info"
+               formControlName="mensaje" placeholder="Ingrese su mensaje. (max 400 caracteres)"></textarea>
+
+        </section>
+
+        <input type="submit" value="Enviar" class="ContactPage__formBox--inputBox-btn bg-secondary text-info"
+        (click)="send()" [disabled]="!formMS.valid" >
+
+
+
+    </form>
+
+</section>
