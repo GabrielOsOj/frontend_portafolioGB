@@ -1,37 +1,32 @@
 [
     {
         "idSkill": 1,
-        "titulo": "JavasScript",
+        "titulo": "maqueta",
         "nivel": 70
     },
     {
         "id": 2,
-        "tipo": "skill",
-        "titulo": "angular",
+        "titulo": "maqueta",
         "nivel": 70
     },
     {
         "id": 3,
-        "tipo": "skill",
-        "titulo": "mySql",
+        "titulo": "maqueta",
         "nivel": 70
     },
     {
         "id": 4,
-        "tipo": "skill",
-        "titulo": "java",
+        "titulo": "maqueta",
         "nivel": 40
     },
     {
         "id": 5,
-        "tipo": "skill",
-        "titulo": "springboots",
+        "titulo": "maqueta",
         "nivel": 40
     },
     {
         "id": 6,
-        "tipo": "skill",
-        "titulo": "html,css",
+        "titulo": "maqueta",
         "nivel": 80
     }
 ]

@@ -2,12 +2,7 @@
 	{
 		"id":1,
 		"tipo":"experiencia",
-		"titulo": "experiencia de maqueta",
-		"imgs": [{
-			"id":0,
-			"nombre":"maqueta",
-			"url":"http://localhost/mockParaPortafolio/fotosMock/mineroMok.jpg"
-		  }],
-		"descripcion": "experiencia experiencia experiencia sdandkpaskdj sa asd sda asd asd asd sad sad asd as d"
-	}
+		"titulo": "DATOS MAQUETA",
+		"url": null,
+		"descripcion": "DATOS MAQUETA"	}
 ]

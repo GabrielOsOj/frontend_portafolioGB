@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { LoginService } from './../../servicios/loginSv/login.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -15,9 +16,19 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router, private lgs: LoginService) {}
 
+  activo:boolean= environment.modo_sin_backend;
+
   ngOnInit(): void {
     this.formInit();
+    this.modoMaqueta(this.activo)
   }
+
+  modoMaqueta(modoMaqueta:boolean){
+    if(this.activo){
+      console.warn("MODO MAQUETA ACTIVADO, para mas informacion lea en la documentacion la seccion de iniciar proyecto")
+    }
+  }
+
 
   formInit():void{
     this.loginFormGroup = new FormGroup({
@@ -30,8 +41,13 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  goPlaces() {
+  goPlaces(volverAlinicio:boolean) {
     
+    if(volverAlinicio){
+      this.router.navigate([''])
+      return
+    }
+
     this.lgs.login(this.loginFormGroup.value).subscribe({
       next: () => {
         this.router.navigate([''])

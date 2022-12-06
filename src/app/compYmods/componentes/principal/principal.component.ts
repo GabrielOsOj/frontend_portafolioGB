@@ -1,7 +1,8 @@
-import { LoginService } from './../../servicios/loginSv/login.service';
+import { EditDeleteCreateService } from './../../servicios/edit-delete-createSv/edit-delete-create.service';
+import { LoginService } from '../../servicios/loginSv/login.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { VariosService } from './../../servicios/variosSv/varios.service';
+import { VariosService } from '../../servicios/variosSv/varios.service';
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { varios } from 'src/app/Interfaces/estandar-interface';
 import { environment } from 'src/environments/environment';
@@ -16,6 +17,7 @@ export class PrincipalComponent implements OnInit {
   constructor(
     private variosSv: VariosService,
     private lgsv: LoginService,
+    private EDCsv: EditDeleteCreateService
   ) {}
   
   status: boolean = false;
@@ -96,6 +98,7 @@ export class PrincipalComponent implements OnInit {
 
   //abre y cierra el modal
   closeOpen() {
+    this.EDCsv.cambiador(3,0)
     this.status = !this.status;
     this.formInit();
     if(this.status==false){

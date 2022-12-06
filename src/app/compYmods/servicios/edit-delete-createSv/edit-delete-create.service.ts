@@ -12,6 +12,7 @@ export class EditDeleteCreateService {
   //0:control estYexp
   //1:control skill
   //2:control proyectos
+  //3:control modal edicion pagina principal
   //.0: crear, .1: editar, .2;eliminar
 
 
@@ -19,6 +20,7 @@ export class EditDeleteCreateService {
     [false, false, false],
     [false],
     [false, false, false],
+    [false]
   ];
 
   $tipo: BehaviorSubject<any> = new BehaviorSubject<string>("");

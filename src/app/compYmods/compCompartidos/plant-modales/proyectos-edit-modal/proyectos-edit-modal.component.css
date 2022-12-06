@@ -32,8 +32,7 @@
 .editBox{
     overflow-y: auto;
     overflow-x: hidden;
-    width: 500px;
-    height: 500px;
+
 }
 
 .imgFondo{
@@ -43,4 +42,13 @@
     
     background-color: rgba(0, 0, 0, .7);
     position: absolute;
+}
+
+/* movile */
+
+@media(max-width: 991px){
+    .editBox{
+        width: 100% !important;
+        height: 75% !important;
+    }
 }

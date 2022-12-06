@@ -2,30 +2,43 @@
     width: 100%;
     text-align: end;
     font-size: 30px;
-
 }
 
-@media (max-width: 767px) {
-    .p {
-        text-align: center;
-    }
-}
-
-.box {
-    width: 100%;
-    height: 284px;
-    border-radius: 4px;
-    margin: 10px;
-}
-
-.box:hover {
-    transform: scale(1.01);
-}
 
 .nwBtn{
-    
     height: 284px;
     border-radius: 4px;
     margin: 10px;
 }
 
+
+.contTarj{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+
+
+@media (max-width:700px) {
+
+    .contTarj {
+        flex-wrap: nowrap;
+        align-content: center;
+
+        width: 100%;
+        
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+
+    .tarjeta {
+        width: 100%;
+        flex: 0 0 100%;
+
+        scroll-snap-align: center;
+
+    }
+
+}

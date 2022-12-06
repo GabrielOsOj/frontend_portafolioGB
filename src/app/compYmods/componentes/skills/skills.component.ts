@@ -1,3 +1,4 @@
+import { HeaderInfoService } from './../../servicios/headerInfoSv/header-info.service';
 import { SkillsInterface } from './../../../Interfaces/skill-interface';
 import { Component, Input, OnInit } from '@angular/core';
 import { SkillSvService } from '../../servicios/skillSv/skill-sv.service';
@@ -12,7 +13,10 @@ export class SkillsComponent implements OnInit {
 
   @Input() isLogged: boolean = false;
 
-  constructor(private resSkills: SkillSvService) {}
+  constructor(
+    private resSkills: SkillSvService,
+    private HI: HeaderInfoService
+  ) {}
 
   ngOnInit(): void {
     this.get();
@@ -20,8 +24,9 @@ export class SkillsComponent implements OnInit {
 
   get(): void {
     this.resSkills.$resSkill.subscribe({
-      next: (r) => {
+      next: (r: any) => {
         this.resSkillArr = r;
+        this.HI.$skillInfo.next(this.resSkillArr.length != 0);
       },
     });
   }

@@ -1,72 +1,20 @@
 [
-	{
-		"id":1,
-		"tipo":"proyectos",
-		"titulo": "clon de spotify",
-		"imgs": [
-			{
-				"id": 1,
-				"nombre": "imagen1",
-				"url": "http://localhost/mockParaPortafolio/fotosMock/spotifyLogo.jpg"
-			  },
-			  {
-				"id": 2,
-				"nombre": "imagen2",
-				"url": "http://localhost/mockParaPortafolio/fotosMock/spotifyLogoAzul.jpg"
-			  },
-			  {
-				"id": 3,
-				"nombre": "imagen3",
-				"url": "http://localhost/mockParaPortafolio/fotosMock/spotifyLogoRojo.jpg"
-			  }
-			],
-		"descripcion": "clon funcional de spotify, desarrollado con angular, tipescript, html y css",
-		"tecnologias": [
-			{
-				"id": 1,
-				"nombre": "javascript",
-				"color": "#ffa32a"
-			  },
-			  {
-				"id": 2,
-				"nombre": "angular",
-				"color": "#ff0000"
-			  }
-		]
-	},
-	{
-		"id":2,
-		"tipo":"proyectos",
-		"titulo": "Portafolio",
-		"imgs": [
-			{
-				"id": 1,
-				"nombre": "imagen1",
-				"url": "http://localhost/mockParaPortafolio/fotosMock/spotifyLogo.jpg"
-			  },
-			  {
-				"id": 2,
-				"nombre": "imagen2",
-				"url": "http://localhost/mockParaPortafolio/fotosMock/spotifyLogoAzul.jpg"
-			  },
-			  {
-				"id": 3,
-				"nombre": "imagen3",
-				"url": "http://localhost/mockParaPortafolio/fotosMock/spotifyLogoRojo.jpg"
-			  }
-			],
-		"descripcion": "este portafolio se creo con angular, bootstrap, html y css para el frontend, ademas cuenta con un login y un modo edicion que utiliza java y springboots conectados a una base de datos sql",
-		"tecnologias":  [
-			{
-				"id": 1,
-				"nombre": "node",
-				"color": "#FF02A2"
-			  },
-			  {
-				"id": 2,
-				"nombre": "angular",
-				"color": "#ff0000"
-			  }
-		]
-	}
+    {
+        "id": 1,
+        "titulo": "proyectoMaqueta",
+        "descripcion": "maqueta maqueta maqueta maqueta maqueta maqueta maqueta maqueta",
+        "idImg": [
+            2
+        ]
+    },
+    {
+        "id": 53,
+        "titulo": "Ejemplo varias IMGs",
+        "descripcion": "ejemplo de como se veria si un proyecto tiene varias imagenes",
+        "idImg": [
+            1,
+            3,
+            4
+        ]
+    }
 ]

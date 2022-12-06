@@ -1,38 +1,33 @@
+import { HeaderInfoService } from './../../servicios/headerInfoSv/header-info.service';
 import { estandar, estYexpIF } from './../../../Interfaces/estandar-interface';
-import { EstudiosService } from './../../servicios/estudiosSv/estudios.service';
+import { EstudiosService } from '../../servicios/estudiosSv/estudios.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-estudios',
   templateUrl: './estudios.component.html',
-  styleUrls: ['./estudios.component.css']
+  styleUrls: ['./estudios.component.css'],
 })
 export class EstudiosComponent implements OnInit {
+  constructor(private resEst: EstudiosService, private HI: HeaderInfoService) {}
 
-  constructor(private resEst:EstudiosService) { }
+  @Input() isLogged: boolean = false;
 
-  @Input() isLogged:boolean =false;
+  resEstudios: Array<estYexpIF> = [];
 
-  estudios:Array<estYexpIF>= [];
-
-  backRes:boolean = false;
+  backRes: boolean = false;
 
   ngOnInit(): void {
-    
-    this.impEstudios()
-
+    this.impEstudios();
   }
 
-  impEstudios(){
+  impEstudios() {
     this.resEst.$resEstudios.subscribe({
-      next: r=>{
-        this.estudios=r;
-        this.backRes=true;
-      }
-    })
+      next: (r: Array<estYexpIF>) => {
+        this.resEstudios = r;
+        this.backRes = true;
+        this.HI.$estInfo.next(this.resEstudios.length != 0);
+      },
+    });
   }
-  
-
-
-
 }

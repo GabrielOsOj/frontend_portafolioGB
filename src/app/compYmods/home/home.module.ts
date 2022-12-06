@@ -1,3 +1,4 @@
+import { ImgRotaDirective } from './../../directivas/img-rota.directive';
 import { ProyectosEditModalComponent } from './../compCompartidos/plant-modales/proyectos-edit-modal/proyectos-edit-modal.component';
 import { EditComponent } from './../compCompartidos/plant-modales/editEstExp-modal/edit-modal.component';
 import { CreateBTNComponent } from './../compCompartidos/crud-plants/create-plant/create-btn/create-btn.component';
@@ -45,7 +46,8 @@ import { SanitizerPipe } from '../compCompartidos/pipes/sanitizer.pipe';
     CreateBTNComponent,
     EditSkillComponent,
     SanitizerPipe,
-    ProyectosEditModalComponent
+    ProyectosEditModalComponent,
+    ImgRotaDirective
   ],
   imports: [CommonModule, HomeRoutingModule, ReactiveFormsModule, FormsModule],
 })

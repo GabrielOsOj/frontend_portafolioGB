@@ -1,21 +1,22 @@
-<ng-container *ngIf="!isLogged && backRes && expLab.length!=0">
+<ng-container *ngIf="!isLogged && backRes && respExp.length!=0">
 
-    <div class="division mt-3 exp"></div>
+    <div class="division mt-3" id="#experiencia"></div>
 
-    <section class="container-fluid d-flex align-items-center justify-content-center flex-column">
+    <section class="mt-2 d-flex align-items-center justify-content-center flex-column">
 
-        <p class="p text-white fs-4">Experiencia</p>
+        <p class="p text-info fs-4">Experiencia</p>
 
-        <div class="cardContainer box">
-            <app-plant-tarjeta *ngFor="let exp of expLab" class="flex-row-reverse" [exp]="exp"></app-plant-tarjeta>
-
+        <div class="contTarj">
+            <section class="tarjeta bg-transparent" *ngFor="let exp of respExp">
+                <app-plant-tarjeta [exp]="exp">
+                </app-plant-tarjeta>
+            </section>
         </div>
-
 
     </section>
 </ng-container>
 
-<ng-container *ngIf="isLogged && backRes">
+<ng-container *ngIf="isLogged">
 
     <div class="division mt-3 exp"></div>
 
@@ -23,14 +24,15 @@
 
         <p class="p text-white fs-4">Experiencia</p>
 
+        <ng-container *ngIf="backRes">
+            <section *ngFor="let exp of respExp" class="position-relative box mb-2">
 
-        <section *ngFor="let exp of expLab" class="position-relative box">
+                <app-upd-del-btn class="position-absolute top-0 end-0" [objEdit]="exp" [seccion]="0"></app-upd-del-btn>
+                <app-plant-tarjeta class="flex-row-reverse" [exp]="exp">
+                </app-plant-tarjeta>
 
-            <app-upd-del-btn class="position-absolute top-0 end-0" [objEdit]="exp" [seccion]="0"></app-upd-del-btn>
-            <app-plant-tarjeta class="flex-row-reverse" [exp]="exp">
-            </app-plant-tarjeta>
-
-        </section>
+            </section>
+        </ng-container>
 
         <section class="nwBtn d-flex justify-content-center align-items-center w-100">
             <app-create-btn [crear]="0" [tipo]="'experiencia'"></app-create-btn>

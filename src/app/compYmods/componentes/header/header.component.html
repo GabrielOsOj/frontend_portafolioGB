@@ -3,37 +3,93 @@
     <div class="container-fluid d-flex align-items-center">
 
         <div class="logo me-auto">
-            <a href="index.html"><img src="../../../../assets/argentiaProgramaLogo.png" class="img img-fluid"></a>
+            <a href="index.html"><img src="../../../../assets/ImgsRespaldo/argentiaProgramaLogo.png" class="img img-fluid"></a>
         </div>
-        <nav id="navbar" *ngIf="estado" class="navbar order-last order-lg-0 ">
+        <nav id="" class="navbar order-last order-lg-0 ">
             <ul>
                 <li><a class="nav-link" (click)="goTo('#inicio')">Inicio</a></li>
-                <li><a class="nav-link" (click)="goTo('#proyectos')">Proyectos</a></li>
-                <li><a class="nav-link" (click)="goTo('#estudios')">Estudios</a></li>
-                <li><a class="nav-link" (click)="goTo('#experiencia')">Experiencia</a></li>                
+                <li *ngIf="HI.$proyInfo|async"><a class="nav-link" (click)="goTo('#proyectos')">Proyectos</a></li>
+
+                <li *ngIf="HI.$estInfo|async"><a class="nav-link" (click)="goTo('#estudios')">Estudios</a></li>
+
+                <li *ngIf="HI.$expInfo|async"><a class="nav-link" (click)="goTo('#experiencia')">Experiencia</a></li>
+
+                <li *ngIf="HI.$skillInfo|async"><a class="nav-link" (click)="goTo('#habilidades')">Skills</a></li>
+
+
                 <!-- <li><a class="nav-link" (click)="goTo('#contacto')">Contacto</a></li> -->
-                    
-            </ul> <i class="bi bi-list mobile-nav-toggle" (click)="switch()"></i>
+
+            </ul>
+
         </nav>
 
-        <nav id="navbar" *ngIf="!estado" class="navbar order-last order-lg-0 navbar-mobile">
-            <ul>
-                <li><a class="nav-link" (click)="goTo('#inicio')" (click)="switch()">Inicio</a></li>
-                <li><a class="nav-link" (click)="goTo('#proyectos')" (click)="switch()">Proyectos</a></li>
-                <li><a class="nav-link" (click)="goTo('#estudios')" (click)="switch()">Estudios</a></li>
-                <li><a class="nav-link" (click)="goTo('#experiencia')" (click)="switch()">Experiencia</a></li>                
+        <section class="header-social-links d-flex align-items-center">
+
+            <button [ngClass]="{'mx-2 btn btn-outline-info':true}" *ngIf="!isLogged" (click)="logIn()">iniciar
+                sesion</button>
+            <button [ngClass]="{'mx-2 btn btn-outline-info':true}" *ngIf="isLogged" (click)="logOut()">cerrar
+                sesion</button>
+
+            <a href="https://github.com/GabrielOsOj" target="_blank" class="SectionPage__redesBox--red"><i
+                    class="bi bi-github text-info"></i></a>
+
+            <a href="https://www.linkedin.com/in/gabriel-osvaldo-ojeda-496449252/" class="SectionPage__redesBox--red"
+                target="_blank"><i class="bi bi-linkedin text-info"></i></a>
+
+
+            <a href="https://www.facebook.com/profile.php?id=100049246574496" class="SectionPage__redesBox--red"
+                target="_blank"><i class="bi bi-facebook text-info"></i></a>
+
+        </section>
+
+        <i class="bi bi-list mobile-nav-toggle mx-3" (click)="switch()"></i>
+
+
+        <!-- menu desplegable en movile -->
+        <div id="navbar" *ngIf="estado"
+            class="navbar order-last order-lg-0 navbar-mobile d-flex flex-column bg-secondary justify-content-between">
+            <i class="bi bi-list mobile-nav-toggle bi-x w-100 text-end" (click)="switch()"></i>
+
+            <ul class="d-flex flex-column justify-content-evenly h-50">
+
+                <li>
+                    <button class="mx-2 btn btn-outline-info" *ngIf="!isLogged" (click)="logIn()">iniciar
+                        sesion</button>
+                    <button class="mx-2 btn btn-outline-info" *ngIf="isLogged" (click)="logOut()">cerrar sesion</button>
+                </li>
+
+                <li><a class="nav-link-movile" (click)="goTo('#inicio')" (click)="switch()">Inicio</a></li>
+
+                <li *ngIf="HI.$proyInfo|async"><a class="nav-link-movile" (click)="goTo('#proyectos')"
+                        (click)="switch()">Proyectos</a>
+                </li>
+
+                <li *ngIf="HI.$estInfo|async"><a class="nav-link-movile" (click)="goTo('#estudios')"
+                        (click)="switch()">Estudios</a></li>
+
+                <li *ngIf="HI.$expInfo|async"><a class="nav-link-movile" (click)="goTo('#experiencia')"
+                        (click)="switch()">Experiencia</a></li>
+
+                <li *ngIf="HI.$skillInfo|async"><a class="nav-link-movile" (click)="goTo('#habilidades')"
+                        (click)="switch()">Skills</a></li>
+
                 <!-- <li><a class="nav-link" (click)="goTo('#contacto')" (click)="switch()">Contacto</a></li> -->
 
-            </ul> <i class="bi bi-list mobile-nav-toggle bi-x" (click)="switch()"></i>
-        </nav>
+            </ul>
+            <section class="navbar-redes-mobile w-100 h-25 d-flex justify-content-evenly">
+                <a href="https://github.com/GabrielOsOj" target="_blank" class="Red"><i
+                        class="bi bi-github text-info fs-1"></i></a>
 
-        <div class="header-social-links d-flex align-items-center"> 
-            <button [ngClass]="{'mx-2 btn btn-outline-info':true}" *ngIf="!isLogged" (click)="logIn()">iniciar sesion</button>
-            <button [ngClass]="{'mx-2 btn btn-outline-info':true}" *ngIf="isLogged" (click)="logOut()">cerrar sesion</button>
+                <a href="https://www.linkedin.com/in/gabriel-osvaldo-ojeda-496449252/"
+                    class="Red" target="_blank"><i class="bi bi-linkedin text-info fs-1"></i></a>
 
-            <a href="https://github.com/GabrielOsOj" target="_blank" class="github"><i class="bi bi-github"></i></a> 
-            <a href="https://ar.linkedin.com/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+
+                <a href="https://www.facebook.com/profile.php?id=100049246574496" class="Red"
+                    target="_blank"><i class="bi bi-facebook text-info fs-1"></i></a>
+            </section>
+
         </div>
+
 
     </div>
 </header>

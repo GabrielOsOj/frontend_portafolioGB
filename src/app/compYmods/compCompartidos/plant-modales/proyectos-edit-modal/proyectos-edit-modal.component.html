@@ -27,7 +27,7 @@
     <section
         class="bg-template position-fixed top-50 start-50 translate-middle d-flex align-items-center justify-content-center w-100 h-100">
 
-        <div class="editBox position-relative bg-secondary justify-content-center text-info">
+        <div class="editBox h-75 w-50 position-relative bg-secondary justify-content-center text-info">
 
             <i class="iconMod bi bi-x position-absolute top-0 end-0" (click)="EDCsv.cambiador(2,1)"></i>
 
@@ -48,7 +48,7 @@
                 <section class="form_imgs d-flex justify-content-evenly w-100">
                     <section class="mx-1 position-relative" *ngFor="let img of objSelect.idImg, index as i" (click)="selectTo(img,i)">
                         <section class="imgFondo" *ngIf="estilos[i]"></section>
-                        <img src="{{urlImagenes}}/imagen/{{img}}" alt="" class="imgBox">
+                        <img appImgRota src="{{urlImagenes}}/imagen/{{img}}" alt="" class="imgBox">
                     </section>
                 </section>
 
@@ -80,7 +80,7 @@
     <section
         class="bg-template position-fixed top-50 start-50 translate-middle d-flex align-items-center justify-content-center ">
 
-        <div class="editBox position-relative bg-secondary justify-content-center text-info">
+        <div class="editBox h-75 w-50 position-relative bg-secondary justify-content-center text-info">
 
             <i class="iconMod bi bi-x position-absolute top-0 end-0" (click)="EDCsv.cambiador(2,0)"></i>
 

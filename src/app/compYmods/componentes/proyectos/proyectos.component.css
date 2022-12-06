@@ -15,3 +15,31 @@
     width: 300px;
     height: 350px;
 }
+
+.contTarj{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+@media (max-width:820px) {
+
+    .contTarj {
+        justify-content: initial;
+        align-content: center;
+        flex-wrap: nowrap;
+        
+        
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+
+    .tarjeta {
+        width: 100%;
+        flex: 0 0 100%;
+
+        scroll-snap-align: center;
+    }
+
+}

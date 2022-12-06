@@ -1,7 +1,7 @@
 .pag1 {
     height: 40rem;
 
-    background-image: url("../../../../assets/argProgBanner.jpg");
+    background-image: url("../../../../assets/ImgsRespaldo/argProgBanner.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -18,11 +18,12 @@
     object-fit: cover;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 990px) {
 
     .pag1 {
-        height: 80rem;
-
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
     }
 
     .container {
@@ -30,6 +31,15 @@
         height: 50rem;
     }
 
+    .ImgContainer {
+        height: 150px;
+        width: 150px;
+    }
+
+    .textContainer {
+
+        width: 100% !important;
+    }
 }
 
 
@@ -57,19 +67,46 @@
     place-content: center;
 }
 
-.btnImg:hover{
+.btnImg:hover {
     opacity: 1;
     background: var(--colorN4);
     cursor: pointer;
 }
 
-.iUpload{
+.iUpload {
     cursor: pointer;
 
 }
-.fileBtn{
+
+.fileBtn {
     cursor: pointer;
 
     opacity: 0;
 }
 
+
+/* mobile */
+
+@media(max-width: 990px) {
+    
+    .editBox,
+    .titleInput,
+    .imgTitCont {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .editBox{
+        overflow: auto;
+    }
+
+    .imgInput {
+        margin: 0 auto !important;
+    }
+    
+    .imgTitCont {
+        flex-direction: column;
+        width: 75% !important;
+        justify-content: space-evenly !important;
+    }
+}

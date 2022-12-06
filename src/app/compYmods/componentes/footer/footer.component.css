@@ -4,12 +4,6 @@
     background-color: #fff;
 }
 
-.SectionPage--copyrigth{
-    line-height: 80px;
-    font-size: 10px;
-
-}
-
 .SectionPage__redesBox{
     height: 100%;
     list-style: none;
@@ -19,17 +13,28 @@
     height: 50px;
     width: 50px;
  
-    line-height: 50px;
     text-align: center;
     transition: all .5s;
 
 }
 
 .SectionPage__redesBox--red:hover{
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
-
 
 i{
     font-size: 30px;
+}
+
+@media (max-width:700px){
+
+ .SectionPage__redesBox{
+    display: none !important;
+ }
+
+ .SectionPage__copyright-text{
+    text-align: center !important;
+    font-size: 10px !important;
+ }
+
 }

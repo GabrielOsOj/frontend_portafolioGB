@@ -1,12 +1,40 @@
-.pa{
+.pa {
     width: 100%;
     text-align: start;
-    font-size: 30px;   
+    font-size: 30px;
 }
 
-.nwBtn{
-  
+.nwBtn {
     height: 284px;
     border-radius: 4px;
     margin: 10px;
+}
+
+.contTarj{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+@media (max-width:700px) {
+
+    .contTarj {
+        justify-content: initial;
+        align-content: center;
+        flex-wrap: nowrap;
+        width: 100%;
+        
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+
+    }
+
+    .tarjeta {
+        width: 100%;
+        flex: 0 0 100%;
+
+        scroll-snap-align: center;
+    }
+
 }

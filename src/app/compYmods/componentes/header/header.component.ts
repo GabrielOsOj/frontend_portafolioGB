@@ -1,4 +1,5 @@
-import { LoginService } from './../../servicios/loginSv/login.service';
+import { HeaderInfoService } from './../../servicios/headerInfoSv/header-info.service';
+import { LoginService } from '../../servicios/loginSv/login.service';
 import {
   Component,
   EventEmitter,
@@ -14,14 +15,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  estado: boolean = true;
+  estado: boolean = false;
   pos: boolean = true;
   isLogged = false;
- 
 
   @Output() newItemEvent = new EventEmitter<string>();
 
-  constructor(private lgsv: LoginService, private router: Router) {}
+  constructor(
+    private lgsv: LoginService,
+    private router: Router,
+    public HI: HeaderInfoService
+  ) {}
 
   ngOnInit(): void {
     this.hasLogged();
@@ -29,15 +33,15 @@ export class HeaderComponent implements OnInit {
   }
 
   public switch() {
-    this.estado == true ? (this.estado = false) : (this.estado = true);
+    this.estado = !this.estado;
   }
 
   @HostListener('window:scroll', ['$event'])
   tempo(): void {
-    this.posCheck()
+    this.posCheck();
   }
 
-  posCheck(){
+  posCheck() {
     let posUser: number = window.pageYOffset;
     if (posUser > 0) {
       this.pos = false;
@@ -50,18 +54,18 @@ export class HeaderComponent implements OnInit {
     this.newItemEvent.emit(nombre);
   }
 
-  logIn(){
-    this.router.navigate(['/login'])
+  logIn() {
+    this.router.navigate(['/login']);
   }
 
-  logOut(){
+  logOut() {
     this.lgsv.logOut();
   }
 
   //login btn
 
   hasLogged(): void {
-    if(this.lgsv.getToken()){
+    if (this.lgsv.getToken()) {
       this.isLogged = true;
     } else {
       this.isLogged = false;

@@ -14,9 +14,10 @@ export class HomeComponent implements OnInit {
     public editSv: EditDeleteCreateService
   ) {}
 
-  isLogged = false;
+  isLogged = true;
 
   ngOnInit(): void {
+    
     this.hasLogged();
     
   }

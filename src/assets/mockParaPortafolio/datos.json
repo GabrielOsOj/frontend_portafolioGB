@@ -1,9 +1,9 @@
 [
     {
         "id": 1,
+        "titulo": "Full Stack Developer",
         "nombre": "Gabriel Ojeda",
-        "titulo": "full stack developer",
-        "descripcion": "mi nombre es gabriel, y soy un desarrolador full stack en busca de mi primera experienca laboral",
-        "url": ""
+        "descripcion": "hola y bienvenido a mi portafilio",
+        "url": null
     }
 ]
