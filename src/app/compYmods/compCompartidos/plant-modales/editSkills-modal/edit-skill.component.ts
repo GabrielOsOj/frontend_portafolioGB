@@ -15,13 +15,20 @@ export class EditSkillComponent implements OnInit {
   ) {}
   nuevaSkill: FormGroup = new FormGroup({});
 
+  bntSendStatus:boolean = true;
+
   ngOnInit(): void {
     this.iniciarForm()
   }
 
   nuevo() {
-    this.crud.createSv("skills",this.nuevaSkill.value).subscribe();
-    window.location.reload();
+    this.bntSendStatus = false;
+    this.crud.createSv("skills",this.nuevaSkill.value).subscribe({
+      next: ()=>{
+        window.location.reload();
+      }
+    });
+    
   }
 
   iniciarForm() {

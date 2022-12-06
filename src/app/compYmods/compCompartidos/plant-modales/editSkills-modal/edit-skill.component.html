@@ -3,9 +3,9 @@
     <div
         class="bg-template position-fixed top-50 start-50 translate-middle d-flex align-items-center justify-content-center w-100 h-100">
 
-        <section class="confirmDelBox p-1 bg-secondary h-50 w-25 position-relative">
+        <section class="newSkillBox p-1 bg-secondary h-50 w-25 position-relative">
 
-            <i class="iconMod bi bi-x text-info position-absolute top-0 end-0" (click)="EDCsv.cambiador(1,0)"></i>
+            <i [ngClass]="{'iconMod bi bi-x text-info position-absolute top-0 end-0':true, 'oculto':!bntSendStatus}" (click)="EDCsv.cambiador(1,0)" ></i>
 
             <form [formGroup]="nuevaSkill" action=""
                 class="w-100 h-100 d-flex flex-column d-flex justify-content-evenly">
@@ -25,7 +25,7 @@
                 </section>
 
 
-                <input type="button" class="btn btn-outline-info w-50 mx-auto" value="Añadir" (click)="nuevo()">
+                <input type="button" class="btn btn-outline-info w-50 mx-auto" value="Añadir" (click)="nuevo()" [disabled]="!bntSendStatus">
 
             </form>
 

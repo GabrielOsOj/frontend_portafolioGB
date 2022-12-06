@@ -1,30 +1,42 @@
+<ng-container *ngIf="!isLogged && backRes && resEstudios.length!=0">
 
-<ng-container *ngIf="!isLogged && backRes && estudios.length!=0" >
-    <section class="classContainer mt-2 container-fluid d-flex align-items-center justify-content-center flex-column">
+    <div class="division mt-3" id="#estudios"></div>
+
+    <section class="mt-2 container-fluid d-flex align-items-center justify-content-center flex-column">
 
         <p class="pa text-info fs-4">Estudios</p>
-        <div *ngIf="estudios.length!=0">
-            <app-plant-tarjeta [exp]="estudio" *ngFor="let estudio of estudios" [derecho]="true"></app-plant-tarjeta>
 
+        <div class="contTarj" *ngIf="resEstudios.length!=0">
+            <section class="tarjeta bg-transparent" *ngFor="let estudio of resEstudios">
+             
+                <app-plant-tarjeta [exp]="estudio">
+                </app-plant-tarjeta>
+                
+            </section>
+            
         </div>
 
     </section>
 </ng-container>
 
-<ng-container *ngIf="isLogged && backRes" >
+<ng-container *ngIf="isLogged">
+    <div class="division mt-3" id="#estudios"></div>
     <section class="classContainer mt-2 container-fluid d-flex align-items-center justify-content-center flex-column">
 
         <p class="pa text-info fs-4">Estudios</p>
-        <section *ngFor="let estudio of estudios" class="cardContainer position-relative">
-            
-            <app-upd-del-btn class="position-absolute top-0 end-0" [objEdit]="estudio" [seccion]="0" ></app-upd-del-btn>
-            <app-plant-tarjeta [exp]="estudio" [derecho]="true"></app-plant-tarjeta>
+        <ng-container *ngIf="backRes">
+            <section *ngFor="let estudio of resEstudios" class="position-relative mb-2">
 
-        </section>
+                <app-upd-del-btn class="position-absolute top-0 end-0" [objEdit]="estudio" [seccion]="0">
+                </app-upd-del-btn>
+                <app-plant-tarjeta [exp]="estudio" [derecho]="true"></app-plant-tarjeta>
+
+            </section>
+        </ng-container>
 
         <section class="nwBtn d-flex justify-content-center align-items-center w-100">
             <app-create-btn [crear]="0" [tipo]="'estudio'"></app-create-btn>
         </section>
-        
+
     </section>
 </ng-container>

@@ -1,66 +1,106 @@
 .box {
-    width: 1024px;
-    height: 284px;
-    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
     margin: 10px;
-
-    transition: all .5s;
-}
-
-.imgContainer {
-    width: 250px;
-    height: 180px;
-    margin: 0 20px 0 20px;
-
-    padding: 4px;
-    background-color: #fff;
-
-}
-
-.imgC {
-    object-fit: contain;
+    width: 400px;
+    height: 600px;
 }
 
 .TyPcontainer {
-    width: 65%;
-    height: 180px;
+    width: 75%;
+    height: auto;
 }
 
-.titulo {
-    font-weight: 600;
+
+.imgContainer {
+    width: 300px;
+    height: 230px;
+    background-color: #fff;
 }
 
-.derechoF {
-    flex-direction: row-reverse;
-}
 
-@media (max-width: 991px) {
+@media (max-width: 1080px) {
+
     .box {
-        flex-direction: column;
-        justify-content: center;
-        align-items:center;
-       
-        overflow: hidden;
+        flex-direction: row;
 
-        width: 400px;
-        height: 600px;
-    }
+        width: 700px;
+        height: 284px;
+        border-radius: 4px;
+        margin: 10px;
 
-    .TyPcontainer {
-        width: 75%;
-        height: auto;
-    }
-
-    .info,
-    .titulo {
-        width: 100%;
+        transition: all .5s;
     }
 
     .imgContainer {
-        width: 250px;
+        width: 30%;
         height: 180px;
-        
+        margin: 0 20px 0 20px;
+
+        padding: 4px;
+        background-color: #fff;
 
     }
+
+    .imgC {
+        object-fit: contain;
+    }
+
+    .TyPcontainer {
+        width: 50%;
+        height: 180px;
+    }
+
 }
 
+@media (max-width:700px) {
+    .box {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        overflow: hidden;
+
+        width: 300px;
+        height: 400px;
+        margin: auto;
+    }
+
+    .imgContainer {
+        width: 200px;
+        height: 130px;
+    }
+
+    .TyPcontainer {
+        width: 80%;
+        height: 180px;
+    }
+
+}
+
+@media (max-width:400px) {
+
+    .box {
+        width: 200px;
+        height: 300px;
+    }
+
+    .imgContainer {
+        width: 170px;
+        height: 100px;
+    }
+
+    .titulo {
+        font-size: 20px !important;
+    }
+
+    .info {
+        font-size: 13px !important;
+    }
+
+}

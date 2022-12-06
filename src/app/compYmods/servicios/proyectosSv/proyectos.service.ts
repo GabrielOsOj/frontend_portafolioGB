@@ -12,7 +12,17 @@ export class ProyectosService {
 
   private readonly url = environment.urlCrudSv;
 
-  $resProyectos:Observable<any>=this.peticion.get(`${this.url}proyectos/datos`);
+  //Maqueta (comentar lo de arriva y descomentar esto)
+  $resProyectos:Observable<any>=this.peticion.get(this.hasBackend(environment.modo_sin_backend));
+
+
+  hasBackend(modoSinBackend:boolean){
+    if(modoSinBackend==true){
+      return '../../../../assets/mockParaPortafolio/proyectos.json'
+    }else{
+      return `${this.url}proyectos/datos`
+    }
+  }
   
   //datos sin foto
   crearProyectoSF(body:object):Observable<any>{

@@ -1,13 +1,13 @@
-<ng-container *ngIf="!isLogged && BackRes">
+<ng-container *ngIf="!isLogged && BackRes && resProyectos.length!=0">
     <div class="division mt-3" id="#proyectos"></div>
 
     <section class="ProyectosPg d-flex mt-3 flex-column">
         <p class="Proyectos-pag__titulo text-info">Proyectos</p>
 
-        <div  class=" Proyectos-pag__container d-flex justify-content-evenly
-            flex-wrap">
-            <app-proyecto-tmp *ngFor="let proyecto of resProyectos" [info]="proyecto"></app-proyecto-tmp>
-
+        <div class="contTarj">
+            <section class="tarjeta bg-transparent p-0" *ngFor="let proyecto of resProyectos">
+                <app-proyecto-tmp [info]="proyecto"></app-proyecto-tmp>
+            </section>
         </div>
 
     </section>
@@ -15,7 +15,7 @@
 </ng-container>
 
 
-<ng-container *ngIf="isLogged && BackRes">
+<ng-container *ngIf="isLogged">
     <div class="division mt-3" id="#proyectos"></div>
 
     <section class="ProyectosPg d-flex mt-3 flex-column">
@@ -23,13 +23,13 @@
 
         <div class="Proyectos-pag__container d-flex justify-content-evenly flex-wrap">
 
-            <section class="position-relative" *ngFor="let proyecto of resProyectos">
-                <app-proyecto-tmp [info]="proyecto"></app-proyecto-tmp>
-                <app-upd-del-btn class="position-absolute top-0 start-100 translate-middle" [proyectoEdit]="proyecto"
-                    [seccion]="2">
-                </app-upd-del-btn>
-            </section>
-
+            <ng-container *ngIf="BackRes">
+                <section class="position-relative m-2" *ngFor="let proyecto of resProyectos">
+                    <app-proyecto-tmp [info]="proyecto"></app-proyecto-tmp>
+                    <app-upd-del-btn class="position-absolute top-0 end-0" [proyectoEdit]="proyecto" [seccion]="2">
+                    </app-upd-del-btn>
+                </section>
+            </ng-container>
 
             <section class="nwBtn d-flex justify-content-center align-items-center">
                 <app-create-btn [crear]="2"></app-create-btn>

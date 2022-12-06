@@ -157,16 +157,35 @@ export class ProyectosEditModalComponent implements OnInit {
   }
 
   guardarImagenes(r: number) {
-
-    this.imgNuevas.forEach((img) => {
+    for (let i = 0; i < this.imgNuevas.length; i++) {
+      
       let formData = new FormData();
 
       formData.append('id', r.toString());
-      formData.append('file', img);
-      this.proyectoSV.añadirIMG(formData).subscribe();
-    });
+      formData.append('file', this.imgNuevas[i]);
 
-    window.location.reload();
+      if(i<this.imgNuevas.length-1){
+        this.proyectoSV.añadirIMG(formData).subscribe();
+      }else{
+    
+        this.proyectoSV.añadirIMG(formData).subscribe({
+          next:()=>{
+            window.location.reload();
+          }
+        });
+      }
+
+    }
+
+    // this.imgNuevas.forEach((img) => {
+    //   let formData = new FormData();
+
+    //   formData.append('id', r.toString());
+    //   formData.append('file', img);
+
+    //   this.proyectoSV.añadirIMG(formData).subscribe();
+    // });
+
   }
 
   formKeys(form: FormGroup): FormData {

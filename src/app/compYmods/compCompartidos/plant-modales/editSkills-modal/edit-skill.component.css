@@ -12,3 +12,16 @@
     cursor: pointer;
     filter: brightness(.5)
 }
+
+.oculto{
+    visibility: hidden;
+}
+
+/* movil */
+
+@media (max-width:990px){
+    .newSkillBox{
+        width: 100% !important;
+        height: 75% !important;
+    }
+}

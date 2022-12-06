@@ -1,7 +1,7 @@
 <ng-container>
-    <section class="proyectBox d-flex flex-column align-items-center bg-secondary">
+    <section class="proyectBox d-flex flex-column align-items-center justify-content-evenly bg-secondary">
         <section class="proyectBox__titulo my-2 text-info">
-            <h5>{{info.titulo}}</h5>
+            <h2 class="proyectBox__titulo-texto">{{info.titulo}}</h2>
         </section>
         <section class="proyectBox__img">
             <section class="slider-container">
@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="imgFalsa" *ngFor="let img of info.idImg, index as i">
-                    <img src="{{urlImgs}}/imagen/{{img}}" alt="" class="imgBox">
+                    <img appImgRota src="{{urlImgs}}/imagen/{{img}}" alt="" class="imgBox">
                 </div>
 
                 <section class="imgBoxControllers d-flex justify-content-between" *ngIf="info.idImg.length>1">
@@ -27,7 +27,7 @@
         </section>
         <br>
         <section class="proyectBox__descripcion d-flex w-100">
-            <p class="px-2 text-info">{{info.descripcion}} </p>
+            <p class="proyectBox__descripcion-texto fs-6 text-info text-center text-wrap">{{info.descripcion}} </p>
         </section>
 
     </section>

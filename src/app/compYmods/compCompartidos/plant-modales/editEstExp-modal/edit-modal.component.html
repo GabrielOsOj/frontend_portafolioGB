@@ -28,7 +28,7 @@
         class="bg-template position-fixed top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
 
         <form [formGroup]="estOexpForm"
-            class="w-50 h-75 bg-secondary m-2 overflow-auto p-1 d-flex flex-column align-items-center position-relative">
+            class="editFormEstYexp w-50 h-75 bg-secondary m-2 overflow-auto p-1 d-flex flex-column align-items-center position-relative">
 
             <i class="iconMod bi bi-x position-absolute top-0 end-0" (click)="EDCsv.cambiador(0,1)"></i>
 
@@ -47,7 +47,7 @@
                 <div class="d-flex justify-content-center">
 
                     <div class="w-25 h-25 mx-2 my-5 position-relative">
-                        <img src="{{crud.rutaImg()}}/estYexp/?url={{estOexpEdit.id}}" [ngClass]="
+                        <img appImgRota src="{{crud.rutaImg()}}/estYexp/?url={{estOexpEdit.id}}" [ngClass]="
                         {'img-fluid':true}" alt="">
                     </div>
 
@@ -79,7 +79,7 @@
         class="bg-template position-fixed top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
 
         <form [formGroup]="NestOexpForm"
-            class="w-50 h-75 bg-secondary m-2 overflow-auto p-1 d-flex flex-column align-items-center position-relative">
+            class="editFormEstYexp w-50 h-75 bg-secondary m-2 overflow-auto p-1 d-flex flex-column align-items-center position-relative">
 
             <i class="iconMod bi bi-x position-absolute top-0 end-0" (click)="EDCsv.cambiador(0,0)"></i>
 
@@ -92,13 +92,11 @@
                 <input type="text" name="titulo" formControlName="Ntitulo">
             </section>
 
-            <section class="text-info w-75 mx-auto d-flex flex-column my-5">
+            <section class="text-info w-75 mx-auto d-flex flex-column my-5 justify-content-center">
                 <label class="text-center fs-5" for="imgs">Ingrese una imagen</label>
 
-                <div class="w-100 border border-info">
-
-                    <input type="file" name="imgs" id="" (change)="cargarNimagen($event)" class="m-5">
-                </div>
+                
+                <input type="file" name="imgs" id="" (change)="cargarNimagen($event)" class="mx-2 my-5">
 
             </section>
 

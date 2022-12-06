@@ -10,15 +10,40 @@
     min-height: 250px;
 }
 
-@media (max-width: 991px) {
-    .skillContainer {
-        justify-content: space-evenly;
-    }
-}
 
 .newBtnBox {
     height: 250px;
     width: 250px;
 
     padding-top: 50px;
+}
+
+.contTarj{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+
+@media (max-width:991px) {
+
+    .contTarj {
+        justify-content: initial;
+        align-content: center;
+        flex-wrap: nowrap;
+        
+        
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+
+    .tarjeta {
+        width: 100%;
+        flex: 0 0 100%;
+
+        scroll-snap-align: center;
+    }
+
 }

@@ -24,7 +24,9 @@
               </div>
 
 
-              <button class="btn btn-outline-success btn-lg px-5" type="submit" (click)="goPlaces()">Iniciar sesion</button>
+              <button *ngIf="!activo" class="btn btn-outline-success btn-lg px-5" type="submit" (click)="goPlaces(false)">Iniciar sesion</button>
+
+              <button *ngIf="activo" class="btn btn-outline-success btn-lg px-5" type="submit" (click)="goPlaces(true)">MODO MAQUETA ACTIVO</button>
 
               <div class="form_infoBox mt-4">
 

@@ -6,6 +6,7 @@ import {
   ElementRef,
   Input,
   Renderer2,
+  HostListener,
 } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -27,19 +28,38 @@ export class ProyectoTmpComponent implements OnInit {
   @ViewChild('primeraImg')
   img1!: ElementRef;
 
-  ngOnInit(): void {}
+  AnchoResp:number = 0;
+  posicion:number = 0;
+
+  ngOnInit(): void {
+    this.isResp();
+  }
+
+  @HostListener('window:resize',['$event'])
+  anchoCambio(event:any){
+    this.isResp();
+  }
 
   urlImgs = environment.urlImagenes;
 
-  posicion: number = -250;
+  isResp():void{
+    if (window.innerWidth<400){
+      this.AnchoResp=150;
+      this.posicion=-150;
+      return
+    }
+    this.AnchoResp=250;
+    this.posicion=-250;
+  }
 
   izq() {
     const img1 = this.img1.nativeElement;
-    if (this.posicion < -250) {
-      this.posicion += 250;
+
+    if (this.posicion < -this.AnchoResp) {
+      this.posicion += this.AnchoResp;
       this.render.setStyle(img1, 'margin-left', `${this.posicion}px`);
-    } else if (this.posicion == -250) {
-      this.posicion += -250*(this.info.idImg.length-1);
+    } else if (this.posicion == -this.AnchoResp) {
+      this.posicion += -this.AnchoResp*(this.info.idImg.length-1);
       this.render.setStyle(img1, 'margin-left', `${this.posicion}px`);
     }
   }
@@ -47,12 +67,14 @@ export class ProyectoTmpComponent implements OnInit {
   der() {
     const img1 = this.img1.nativeElement;
 
-    if (this.posicion > -250*this.info.idImg.length) {
-      this.posicion -= 250;
+    if (this.posicion > -this.AnchoResp*this.info.idImg.length) {
+      this.posicion -= this.AnchoResp;
       this.render.setStyle(img1, 'margin-left', `${this.posicion}px`);
     } else {
-      this.posicion += 250*(this.info.idImg.length-1);
+      this.posicion += this.AnchoResp*(this.info.idImg.length-1);
       this.render.setStyle(img1, 'margin-left', `${this.posicion}px`);
     }
   }
+
 }
+

@@ -11,16 +11,23 @@ export class VariosService {
 
   private readonly urlCrud = environment.urlCrudSv;
 
-  $variosRes:Observable<any> = this.peticion.get(`${this.urlCrud}varios/get`);
+  $variosRes:Observable<any> = this.peticion.get(this.hasBackend(environment.modo_sin_backend));
+  
+  hasBackend(modoSinBackend:boolean){
+    if(modoSinBackend==true){
+      return `../../../../assets/mockParaPortafolio/datos.json`
+    }else{
+      return `${this.urlCrud}varios/get`
+    }
+  }
 
-
-  actualizarInfoSinFoto(body:object){
-    let url=`${this.urlCrud}varios/editar`
+  actualizarInfoSinFoto(body: object) {
+    let url = `${this.urlCrud}varios/editar`;
     return this.peticion.put(url, body);
   }
 
-  actualizarInfoConFoto(body:object){
-    let url = `${this.urlCrud}varios/especial`
-    return this.peticion.post(url,body);
+  actualizarInfoConFoto(body: object) {
+    let url = `${this.urlCrud}varios/especial`;
+    return this.peticion.post(url, body);
   }
 }
